@@ -1,0 +1,33 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/06/15 08:52:47 by joonasmykka       #+#    #+#              #
+#    Updated: 2023/06/16 08:22:57 by joonasmykka      ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = megaphone
+
+CC = c++ -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror
+
+FILES = megaphone.cpp
+OBJ = $(FILES:.cpp=.o)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+clean:
+	rm -rf $(OBJ)
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
