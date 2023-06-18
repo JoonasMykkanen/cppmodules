@@ -6,22 +6,25 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:24:41 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/06/16 14:22:37 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/06/18 16:37:32 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Contact.class.hpp"
 
 Contact::Contact( void ) {
-	std::cout << "Constructor called!" << std::endl;
+	this->index = this->getNbInst();
+	this->filled = false;
+	this->firstName = "";
+	this->lastName = "";
+	this->nickName = "";
+	this->secret = "";
 
 	Contact::_nbInst += 1;
 	return ;
 }
 
 Contact::~Contact( void ) {
-	std::cout << "Destructor called!" << std::endl;
-
 	Contact::_nbInst -= 1;
 	return ;
 }

@@ -6,7 +6,7 @@
 #    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/15 08:52:47 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/06/16 08:58:55 by joonasmykka      ###   ########.fr        #
+#    Updated: 2023/06/18 12:08:03 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = phonebook
 
 CC = c++ -std=c++98
 INCLUDE = -I ./include
-CFLAGS = -g -Wall -Wextra -Werror $(INCLUDE)
+CFLAGS = -g -Wall -Werror -Wextra $(INCLUDE)
 
 SRC = \
 	main.cpp \
@@ -44,4 +44,4 @@ fclean: clean
 re: fclean all
 
 test: $(NAME)
-	./phonenbook
+	./phonebook
