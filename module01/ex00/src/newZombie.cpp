@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 08:11:44 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/06/18 16:30:56 by joonasmykka      ###   ########.fr       */
+/*   Created: 2023/07/12 09:24:17 by joonasmykka       #+#    #+#             */
+/*   Updated: 2023/07/12 13:18:52 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#include "Zombie.hpp"
 
-# define LAST_ITEM 40
-# define LENGTH 9
-# define WIDTH 10
-
-# include "Contact.class.hpp"
-# include <iostream>
-
-
-class PhoneBook {
-	public:
-
-		void	addContact( void );
-		void	findContact( void );
-
-		PhoneBook( void );
-		~PhoneBook( void );
+Zombie*	newZombie( std::string name ) {
+	if (name.length() < 1)
+		return (NULL);
 	
-	private:
-		Contact contacts[8];
+	Zombie* newZombie = new Zombie(name);
+		
+	return (newZombie);
 };
-
-#endif // !PHONEBOOK_CLASS_H

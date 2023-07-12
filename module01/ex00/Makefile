@@ -5,43 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/15 08:52:47 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/07/10 13:46:00 by joonasmykka      ###   ########.fr        #
+#    Created: 2023/07/12 09:20:07 by joonasmykka       #+#    #+#              #
+#    Updated: 2023/07/12 13:29:40 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+INC = -I ./inc
+
+NAME = ex00
 
 CC = c++ -std=c++98
-INCLUDE = -I ./include
-CFLAGS = -g -Wall -Werror -Wextra $(INCLUDE)
+CFLAGS = $(INC) -Wall -Wextra -Werror 
 
-SRC = \
-	main.cpp \
-	Contact.cpp \
-	PhoneBook.cpp
+SRCDIR = src
+OBJDIR = obj
+SRCFILES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SOURCES = $(patsubst %, $(SRCDIR)/%, $(SRCFILES))
+OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCFILES))
 
-OBJ_DIR = obj/
-OBJ = $(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
-
-$(OBJ_DIR)%.o: %.cpp
-	mkdir -p $(OBJ_DIR)
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-
-.PHONY: all clean fclean re test
-
-all: $(NAME)
+all: $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJECTS)
 
 fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-
-test: $(NAME)
-	./phonebook

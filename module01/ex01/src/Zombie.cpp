@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 08:24:41 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/06/18 16:37:32 by joonasmykka      ###   ########.fr       */
+/*   Created: 2023/07/12 09:28:57 by joonasmykka       #+#    #+#             */
+/*   Updated: 2023/07/12 13:59:44 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Contact.class.hpp"
+#include "Zombie.hpp"
 
-Contact::Contact( void ) {
-	this->index = this->getNbInst();
-	this->filled = false;
-	this->firstName = "";
-	this->lastName = "";
-	this->nickName = "";
-	this->secret = "";
+Zombie::Zombie( void ) {
 
-	Contact::_nbInst += 1;
-	return ;
 }
 
-Contact::~Contact( void ) {
-	Contact::_nbInst -= 1;
-	return ;
+Zombie::~Zombie( void ) {
+	
 }
 
-int	Contact::getNbInst( void ) {
-	return (Contact::_nbInst);
+void	Zombie::announce( void ) {
+	std::cout << this->name;
+	std::cout << ": BraiiiiiiinnnzzzZ..." << std::endl; 
 }
 
-int	Contact::_nbInst = 0;
+void	Zombie::setName( std::string name ) {
+	this->name = name;
+}

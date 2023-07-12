@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 08:24:54 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/06/18 16:09:59 by joonasmykka      ###   ########.fr       */
+/*   Created: 2023/07/12 09:23:11 by joonasmykka       #+#    #+#             */
+/*   Updated: 2023/07/12 13:24:12 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_H
-# define CONTACT_CLASS_H
+#include "Zombie.hpp"
 
-# include <iostream>
+int	main(void) {
+	// allocated to the heap with newZombie and deleted afterwards
+	Zombie* PeterPan = newZombie("Heap");
+	PeterPan->announce();
+	delete PeterPan;
 
-class Contact {
-	public:
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickName;
-		std::string secret;
-		bool		filled;
-		int			index;
+	// allocated to the stack and deleted when function returns
+	randomChump("Stack");
 
-		Contact( void );
-		~Contact( void );
-
-		static int	getNbInst( void );
-		
-	private:
-		static int	_nbInst;
-		
-};
-
-#endif // !CONTACT_CLASS_H
+	return (0);
+}

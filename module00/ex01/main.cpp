@@ -6,16 +6,16 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:48 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/06/18 16:37:39 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/07/12 09:18:11 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/PhoneBook.class.hpp"
-#include "include/Contact.class.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 #include <iostream>
 #include <string>
 
-void	toLowerCase(std::string& str) {	
+void	toLowerCase(std::string& str) {
 	for (size_t i = 0; i < str.length(); i++) {
         str[i] = std::tolower(static_cast<unsigned char>(str[i]));
     }
@@ -38,11 +38,11 @@ int	handleInput(std::string input, PhoneBook& list) {
 }
 
 int	main(void) {
-	PhoneBook list;
+	std::string	input;
+	PhoneBook	list;
 	
 	std::cout << "Welcome to aweseome phonebook!" << std::endl;
 	std::cout << "Avaivable commands are: ADD, DELETE, SEARCH & EXIT" << std::endl;
-	std::string	input;
 	while (42) {
 		std::cout << "Enter command--> ";
     	std::cin >> input;
