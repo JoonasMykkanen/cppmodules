@@ -5,21 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 09:23:11 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 15:54:52 by joonasmykka      ###   ########.fr       */
+/*   Created: 2023/07/12 15:58:32 by joonasmykka       #+#    #+#             */
+/*   Updated: 2023/07/12 16:21:27 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Zombie.hpp"
+#include <iostream>
+#include <string>
 
 int	main(void) {
-	// allocated to the heap with newZombie and deleted afterwards
-	Zombie* PeterPan = newZombie("Heap");
-	PeterPan->announce();
-	delete PeterPan;
+	std::string 	stringVAR = "HI THIS IS BRAIN";
+	std::string*	stringPTR = &stringVAR;
+	std::string&	stringREF = stringVAR;
 
-	// allocated to the stack and deleted when function returns
-	randomChump("Stack");
+	std::cout << "address of var: " << &stringVAR << std::endl;
+	std::cout << "address of ptr: " << stringPTR << std::endl;
+	std::cout << "address of ref: " << &stringREF << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "value of var: " << stringVAR << std::endl;
+	std::cout << "value of ptr: " << *stringPTR << std::endl;
+	std::cout << "value of ref: " << stringREF << std::endl;
 
 	return (0);
 }

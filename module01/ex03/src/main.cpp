@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 09:28:57 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 14:35:25 by joonasmykka      ###   ########.fr       */
+/*   Created: 2023/07/12 16:24:29 by joonasmykka       #+#    #+#             */
+/*   Updated: 2023/07/12 17:07:07 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Zombie.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie( void ) {
+int	main(void) {
+	{
+		Weapon club = Weapon("crude spiked club");
 
-}
-
-Zombie::~Zombie( void ) {
-	
-}
-
-void	Zombie::announce( void ) {
-	std::cout << this->name;
-	std::cout << ": BraiiiiiiinnnzzzZ..." << std::endl; 
-}
-
-void	Zombie::setName( std::string name ) {
-	this->name = name;
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		
+	}
 }

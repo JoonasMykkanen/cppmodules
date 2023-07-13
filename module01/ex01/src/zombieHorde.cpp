@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 13:38:36 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 14:26:34 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/07/12 15:56:11 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 // then set name with separate public function
 // Below lines can be used to prove that it is more than one zombie
 // since they all will have unique names
-	// std::string baseName = name;
-	// std::string uniqueName = baseName + std::to_string(i);
-	// zombieHorde[i].setName(uniqueName);
 Zombie*	zombieHorde( int n, std::string name ) {
 	Zombie* zombieHorde = new Zombie[n];
 	for (int i = 0; i < n; i++) {
+		// std::string baseName = name;
+		// std::string uniqueName = baseName + std::to_string(i);
+		// zombieHorde[i].setName(uniqueName);
 		zombieHorde[i].setName(name);
 	}
 	return (zombieHorde);

@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 13:39:19 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 14:29:09 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/07/12 15:54:36 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,13 @@ int	main(void) {
 	std::cout << "Count: ";
 	std::cin >> count;
 	std::cout << "name: ";
-	std::cin >> name;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::getline(std::cin, name);
 	
+	// Check if input is valid
+	if (count < 1 || name.empty())
+		return (0);
+
 	// Allocating horde of zombies, init will happen inside func
 	Zombie *horde = zombieHorde(count, name);
 

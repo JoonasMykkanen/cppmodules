@@ -5,32 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/12 13:29:24 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/07/12 15:57:31 by joonasmykka      ###   ########.fr        #
+#    Created: 2023/06/15 08:52:47 by joonasmykka       #+#    #+#              #
+#    Updated: 2023/07/12 16:18:07 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-INC = -I ./inc
-
-NAME = ex01
+NAME = ex02
 
 CC = c++ -std=c++98
-CFLAGS = $(INC) -Wall -Wextra -Werror 
+CFLAGS = -g -Wall -Wextra -Werror
 
-SRCDIR = src
-OBJDIR = obj
-SRCFILES = main.cpp Zombie.cpp zombieHorde.cpp
-SOURCES = $(patsubst %, $(SRCDIR)/%, $(SRCFILES))
-OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCFILES))
+FILES = main.cpp
+OBJ = $(FILES:.cpp=.o)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
-all: $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+all: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf $(OBJECTS)
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -rf $(NAME)
