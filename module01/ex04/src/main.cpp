@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 11:42:32 by jmykkane          #+#    #+#             */
-/*   Updated: 2023/07/13 14:00:51 by jmykkane         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:43:44 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,21 @@ static void	sedIsForLosers(char **args) {
     }
 
 	std::string output;
+	std::string	line;
     while (std::getline(infile, line)) {
-		outfile << line;
+		output.append(line);
     }
+
+	size_t pos = 0;
+	for (size_t i = 0; i < output.length(); i++) {
+		pos = output.find(s1, i);
+		if (pos != std::string::npos) {
+			output.erase(pos, s1.length());
+			output.insert(pos, s2);
+		}
+	}
 	
+	outfile << output;
 	outfile.close();
 }
 
