@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:48 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 09:18:11 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/02 20:11:39 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ int	main(void) {
 	PhoneBook	list;
 	
 	std::cout << "Welcome to aweseome phonebook!" << std::endl;
-	std::cout << "Avaivable commands are: ADD, DELETE, SEARCH & EXIT" << std::endl;
+	std::cout << "Avaivable commands are: ADD, SEARCH & EXIT" << std::endl;
 	while (42) {
 		std::cout << "Enter command--> ";
-    	std::cin >> input;
+    	std::getline(std::cin, input);
 		if (handleInput(input, list) == 1)
 			break ;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 
 	return (0);
