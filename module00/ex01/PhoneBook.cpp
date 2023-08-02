@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 09:18:05 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/02 10:56:42 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook( void ) {
-	return ;
+
 }
 
 PhoneBook::~PhoneBook( void ) {
-	return ;
+	
 }
 
 void	PhoneBook::addContact( void ) {	
@@ -26,15 +26,18 @@ void	PhoneBook::addContact( void ) {
 	while (this->contacts[index].filled == true) {
 		index++;
 	}
+	std::cout << "index: " << index << std::endl;
 
-	while (index-- > 0) {
+	while (index > 0) {
 		this->contacts[index].firstName = this->contacts[index - 1].firstName;
 		this->contacts[index].lastName = this->contacts[index - 1].lastName;
 		this->contacts[index].nickName = this->contacts[index - 1].nickName;
 		this->contacts[index].secret = this->contacts[index - 1].secret;
 		if (this->contacts[index].firstName.length() > 0) {
+			std::cout << "set filled true: " << index << std::endl;
 			this->contacts[index].filled = true;
 		}
+		index--;
 	}
 	
 	std::cout << "Enter contact's firstname: ";
