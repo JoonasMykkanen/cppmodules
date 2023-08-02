@@ -6,13 +6,14 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/02 20:12:07 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/02 20:21:39 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook( void ) {
+
 }
 
 PhoneBook::~PhoneBook( void ) {
