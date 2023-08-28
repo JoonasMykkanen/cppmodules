@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/02 20:21:39 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/05 22:58:57 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,45 +17,44 @@ PhoneBook::PhoneBook( void ) {
 }
 
 PhoneBook::~PhoneBook( void ) {
+	
 }
 
-void	PhoneBook::addContact( void ) {	
+void	PhoneBook::addContact( void ) {
+	static int	oldest = 0;
+	std::string input;
 	int index = 0;
 	
 	while (this->contacts[index].getFilled() == true) {
 		index++;
 	}
 
-	while (index-- > 0) {
-		this->contacts[index].setFirstName(this->contacts[index - 1].getFirstName());
-		this->contacts[index].setLastName(this->contacts[index - 1].getLastName());
-		this->contacts[index].setNickName(this->contacts[index - 1].getNickName());
-		this->contacts[index].setNumber(this->contacts[index - 1].getNumber());
-		this->contacts[index].setSecret( this->contacts[index - 1].getSecret());
-		if (this->contacts[index].getFirstName().length() > 0) {
-			this->contacts[index].setFilled(true);
+	if (index == 8) {
+		if (oldest == 8) {
+			oldest = 0;
 		}
+		index = 0;
+		index += oldest;
+		oldest += 1;
 	}
-
-	std::string	input;
 	
 	std::cout << "Enter contact's firstname: ";
 	std::cin >> input;
-	this->contacts[0].setFirstName(input);
+	this->contacts[index].setFirstName(input);
 	std::cout << "Enter contact's lastname: ";
 	std::cin >> input;
-	this->contacts[0].setLastName(input);
+	this->contacts[index].setLastName(input);
 	std::cout << "Enter contact's nickname: ";
 	std::cin >> input;
-	this->contacts[0].setNickName(input);
+	this->contacts[index].setNickName(input);
 	std::cout << "Enter contact's number: ";
 	std::cin >> input;
-	this->contacts[0].setNumber(input);
+	this->contacts[index].setNumber(input);
 	std::cout << "Enter the secret: ";
 	std::cin >> input;
-	this->contacts[0].setSecret(input);
-	this->contacts[0].setFilled(true);
-	std::cout << this->contacts[0].getFirstName() << " has added been to phonebook" << std::endl;
+	this->contacts[index].setSecret(input);
+	this->contacts[index].setFilled(true);
+	std::cout << this->contacts[index].getFirstName() << " has added been to phonebook" << std::endl;
 	
 	return ;
 }
@@ -80,14 +79,17 @@ void	fill(std::string* str, std::string content) {
 
 void	PhoneBook::findContact( void ) {
 	std::string str;
-	int		idx = 0;
-	
+	int			idx;
+
+	idx = 0;
 	while (this->contacts[idx].getFilled() == true) {
 		fill(&str, std::to_string(this->contacts[idx].getIndex()));
 		fill(&str, this->contacts[idx].getFirstName());
 		fill(&str, this->contacts[idx].getLastName());
 		fill(&str, this->contacts[idx].getNickName());
 		std::cout << str << std::endl;
+		str.clear();
+		str.empty();
 		idx++;
 	}
 

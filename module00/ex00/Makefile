@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+         #
+#    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/15 08:52:47 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/08/02 13:52:47 by jmykkane         ###   ########.fr        #
+#    Updated: 2023/08/05 22:29:06 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

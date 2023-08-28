@@ -6,25 +6,22 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:24:31 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 17:05:24 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/16 10:00:18 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "../inc/Weapon.hpp"
 
-Weapon::Weapon( std::string type ) : type(type) {
-	
-}
+Weapon::Weapon( std::string type ) : _type(type) { }
 
-Weapon::~Weapon( void ) {
-	
-}
+Weapon::~Weapon( void ) { }
 
 void	Weapon::setType( std::string type ) {
-	this->type = type;
+	_type = type;
 }
 
 std::string const & Weapon::getType( void ) {
-	std::string	typeRef = this->type;
+	std::string&	typeRef = _type;
+	
 	return (typeRef);
 }

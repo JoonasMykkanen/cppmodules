@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:24:14 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 17:05:35 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/16 09:59:26 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class	Weapon {
 		Weapon( std::string type );
 		~Weapon( void );
 
-		void	setType( std::string type );
+		void		setType( std::string type );
 		std::string const & getType( void );
 
 	private:
-		std::string type;
+		std::string _type;
 };
 
 #endif // !WEAPON_H
