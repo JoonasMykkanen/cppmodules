@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:44 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 09:25:50 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/28 13:57:33 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # include "Contact.hpp"
 # include <iostream>
+# include <sstream>
 
 
 class PhoneBook {

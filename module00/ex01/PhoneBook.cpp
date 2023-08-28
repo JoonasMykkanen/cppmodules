@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/05 22:58:57 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/28 14:07:52 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,25 +78,34 @@ void	fill(std::string* str, std::string content) {
 }
 
 void	PhoneBook::findContact( void ) {
-	std::string str;
-	int			idx;
+	std::ostringstream	ss;
+	std::string 		str;
+	int					idx;
 
 	idx = 0;
 	while (this->contacts[idx].getFilled() == true) {
-		fill(&str, std::to_string(this->contacts[idx].getIndex()));
+		ss << this->contacts[idx].getIndex();
+		fill(&str, ss.str());
 		fill(&str, this->contacts[idx].getFirstName());
 		fill(&str, this->contacts[idx].getLastName());
 		fill(&str, this->contacts[idx].getNickName());
 		std::cout << str << std::endl;
 		str.clear();
-		str.empty();
+		ss.str("");
+		ss.clear(); 
 		idx++;
 	}
 
 	std::cout << "enter index: ";
 	std::cin >> idx;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-	if (this->contacts[idx].getFilled() == true) {
+	if (std::cin.fail()) {
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Invalid input..." << std::endl;
+	}
+	else if (this->contacts[idx].getFilled() == true) {
 		std::cout << "firstname: " << this->contacts[idx].getFirstName() << std::endl;
 		std::cout << "lastname: " << this->contacts[idx].getLastName() << std::endl;
 		std::cout << "nickname: " << this->contacts[idx].getNickName() << std::endl;
@@ -104,11 +113,5 @@ void	PhoneBook::findContact( void ) {
 		std::cout << "darkest secret: " << this->contacts[idx].getSecret() << std::endl;
 	} else {
 		std::cout << "No such entry" << std::endl;
-	}
-
-	if (std::cin.fail()) {
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cout << "Invalid input..." << std::endl;
 	}
 }

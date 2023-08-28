@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:48 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/05 22:52:01 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/28 13:34:12 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	main(void) {
     	std::getline(std::cin, input);
 		if (handleInput(input, list) == 1)
 			break ;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 
 	return (0);

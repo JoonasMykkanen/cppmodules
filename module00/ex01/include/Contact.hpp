@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:24:54 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/02 19:44:58 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/28 13:11:54 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
