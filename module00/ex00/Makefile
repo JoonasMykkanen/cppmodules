@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
+#    By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/15 08:52:47 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/08/05 22:29:06 by joonasmykka      ###   ########.fr        #
+#    Updated: 2023/08/28 11:58:39 by jmykkane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,18 +19,20 @@ FILES = megaphone.cpp
 OBJ = $(FILES:.cpp=.o)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "compiling"
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	@echo "cleaning"
+	@rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all

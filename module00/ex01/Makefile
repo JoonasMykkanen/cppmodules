@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
+#    By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/15 08:52:47 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/08/06 00:02:00 by joonasmykka      ###   ########.fr        #
+#    Updated: 2023/08/28 12:35:18 by jmykkane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,23 +25,22 @@ OBJ_DIR = obj/
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
 
 $(OBJ_DIR)%.o: %.cpp
-	mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "compiling"
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 .PHONY: all clean fclean re test
 
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@echo "cleaning"
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
-
-test: $(NAME)
-	./phonebook
