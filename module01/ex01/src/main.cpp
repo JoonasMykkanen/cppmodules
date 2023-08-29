@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 13:39:19 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/06 00:07:03 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/29 09:16:50 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ int	main(void) {
 	std::getline(std::cin, name);
 	
 	// Check if input is valid
-	if (count < 1 || name.empty())
+	if (count < 1 || name.empty()) {
+		std::cout << "error with input" << std::endl;
 		return (0);
+	}
 
 	// Allocating horde of zombies, init will happen inside func
 	Zombie *horde = zombieHorde(count, name);
