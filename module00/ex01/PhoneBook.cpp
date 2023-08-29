@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/28 14:07:52 by jmykkane         ###   ########.fr       */
+/*   Updated: 2023/08/29 08:57:42 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	PhoneBook::addContact( void ) {
 	this->contacts[index].setSecret(input);
 	this->contacts[index].setFilled(true);
 	std::cout << this->contacts[index].getFirstName() << " has added been to phonebook" << std::endl;
-	
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 	return ;
 }
 
