@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+         #
+#    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 13:29:24 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/07/13 13:22:29 by jmykkane         ###   ########.fr        #
+#    Updated: 2023/08/31 07:43:06 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,15 +24,17 @@ SOURCES = $(patsubst %, $(SRCDIR)/%, $(SRCFILES))
 OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCFILES))
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+	@echo "compiling"
+	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 clean:
-	rm -rf $(OBJECTS)
+	@echo "cleaning"
+	@rm -rf $(OBJECTS)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
