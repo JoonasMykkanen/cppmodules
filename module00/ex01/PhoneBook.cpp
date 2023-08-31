@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/29 08:57:42 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/08/31 07:26:51 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	PhoneBook::addContact( void ) {
 	std::string input;
 	int index = 0;
 	
-	while (this->contacts[index].getFilled() == true) {
+	while (this->contacts[index].getFilled() == true && index < 8) {
 		index++;
 	}
 
@@ -84,7 +84,7 @@ void	PhoneBook::findContact( void ) {
 	int					idx;
 
 	idx = 0;
-	while (this->contacts[idx].getFilled() == true) {
+	while (this->contacts[idx].getFilled() == true && idx < 8) {
 		ss << this->contacts[idx].getIndex();
 		fill(&str, ss.str());
 		fill(&str, this->contacts[idx].getFirstName());
@@ -106,7 +106,7 @@ void	PhoneBook::findContact( void ) {
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Invalid input..." << std::endl;
 	}
-	else if (this->contacts[idx].getFilled() == true) {
+	else if (idx < 8 && this->contacts[idx].getFilled() == true) {
 		std::cout << "firstname: " << this->contacts[idx].getFirstName() << std::endl;
 		std::cout << "lastname: " << this->contacts[idx].getLastName() << std::endl;
 		std::cout << "nickname: " << this->contacts[idx].getNickName() << std::endl;
