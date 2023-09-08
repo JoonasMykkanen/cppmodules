@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/05 13:29:50 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/08 11:23:39 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	PhoneBook::findContact( void ) {
     while (this->contacts[idx].getFilled() == true && idx < 8) {
 		ss << this->contacts[idx].getIndex();
         std::string indexStr = ss.str();
-		ss.clear();
+		ss.str("");
         std::string firstName = this->contacts[idx].getFirstName();
         std::string lastName = this->contacts[idx].getLastName();
         std::string nickName = this->contacts[idx].getNickName();
