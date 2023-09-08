@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:48 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/28 13:34:12 by jmykkane         ###   ########.fr       */
+/*   Updated: 2023/09/05 13:12:55 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,18 @@ int	main(void) {
 	std::cout << "Welcome to aweseome phonebook!" << std::endl;
 	std::cout << "Avaivable commands are: ADD, SEARCH & EXIT" << std::endl;
 	while (42) {
+		if (std::cin.eof()) {
+            std::cin.clear();
+            std::cout << "\nEOF detected. Exiting..." << std::endl;
+            exit(1);
+        }
+
+		if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "An error occurred. Please try again." << std::endl;
+        }
+		
 		std::cout << "Enter command--> ";
     	std::getline(std::cin, input);
 		if (handleInput(input, list) == 1)

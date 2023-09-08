@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/31 07:26:51 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/05 13:29:50 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,28 @@ PhoneBook::PhoneBook( void ) {
 
 PhoneBook::~PhoneBook( void ) {
 	
+}
+
+std::string	get_input( std::string msg ) {
+	std::string	input;
+
+	while (input.empty()) {
+		if (std::cin.eof()) {
+            std::cin.clear();
+            std::cout << "\nEOF detected. Exiting..." << std::endl;
+            exit(1);
+        }
+
+		if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "An error occurred. Please try again." << std::endl;
+        }
+
+		std::cout << msg;
+    	std::getline(std::cin, input);
+	}
+	return (input);
 }
 
 void	PhoneBook::addContact( void ) {
@@ -38,24 +60,13 @@ void	PhoneBook::addContact( void ) {
 		oldest += 1;
 	}
 	
-	std::cout << "Enter contact's firstname: ";
-	std::cin >> input;
-	this->contacts[index].setFirstName(input);
-	std::cout << "Enter contact's lastname: ";
-	std::cin >> input;
-	this->contacts[index].setLastName(input);
-	std::cout << "Enter contact's nickname: ";
-	std::cin >> input;
-	this->contacts[index].setNickName(input);
-	std::cout << "Enter contact's number: ";
-	std::cin >> input;
-	this->contacts[index].setNumber(input);
-	std::cout << "Enter the secret: ";
-	std::cin >> input;
-	this->contacts[index].setSecret(input);
+	this->contacts[index].setFirstName(get_input("Enter contact's firstname: "));
+	this->contacts[index].setLastName(get_input("Enter contact's lastname: "));
+	this->contacts[index].setNickName(get_input("Enter contact's nickname: "));
+	this->contacts[index].setNumber(get_input("Enter contact's number: "));
+	this->contacts[index].setSecret(get_input("Enter the secret: "));
 	this->contacts[index].setFilled(true);
 	std::cout << this->contacts[index].getFirstName() << " has added been to phonebook" << std::endl;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 	return ;
 }
@@ -79,23 +90,31 @@ void	fill(std::string* str, std::string content) {
 }
 
 void	PhoneBook::findContact( void ) {
-	std::ostringstream	ss;
-	std::string 		str;
-	int					idx;
-
-	idx = 0;
-	while (this->contacts[idx].getFilled() == true && idx < 8) {
+	std::stringstream	ss;
+	int	idx = 0;
+    
+    while (this->contacts[idx].getFilled() == true && idx < 8) {
 		ss << this->contacts[idx].getIndex();
-		fill(&str, ss.str());
-		fill(&str, this->contacts[idx].getFirstName());
-		fill(&str, this->contacts[idx].getLastName());
-		fill(&str, this->contacts[idx].getNickName());
-		std::cout << str << std::endl;
-		str.clear();
-		ss.str("");
-		ss.clear(); 
-		idx++;
-	}
+        std::string indexStr = ss.str();
+		ss.clear();
+        std::string firstName = this->contacts[idx].getFirstName();
+        std::string lastName = this->contacts[idx].getLastName();
+        std::string nickName = this->contacts[idx].getNickName();
+
+        if (firstName.length() > WIDTH) 
+            firstName = firstName.substr(0, WIDTH - 1) + ".";
+        if (lastName.length() > WIDTH)
+            lastName = lastName.substr(0, WIDTH - 1) + ".";
+        if (nickName.length() > WIDTH)
+            nickName = nickName.substr(0, WIDTH - 1) + ".";
+
+        std::cout << '|' << std::setw(WIDTH) << std::left << std::setfill(' ') << indexStr
+                  << '|' << std::setw(WIDTH) << firstName
+                  << '|' << std::setw(WIDTH) << lastName
+                  << '|' << std::setw(WIDTH) << nickName
+                  << '|' << std::endl;
+        idx++;
+    }
 
 	std::cout << "enter index: ";
 	std::cin >> idx;
