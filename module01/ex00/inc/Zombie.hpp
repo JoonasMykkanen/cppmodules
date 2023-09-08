@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 09:23:30 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 13:21:36 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/08 11:41:49 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ class Zombie {
 
 	private:
 
-		std::string	name;
+		std::string	_name;
 		
 };
 
-void	randomChump( std::string name );
 Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
 
 #endif

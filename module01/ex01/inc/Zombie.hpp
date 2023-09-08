@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 13:30:34 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/12 14:01:18 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/08 11:48:34 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Zombie {
 
 	private:
 
-		std::string name;
+		std::string _name;
 };
 
 Zombie* zombieHorde( int n, std::string name );

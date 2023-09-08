@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:26:02 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/13 18:51:29 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/08 14:05:30 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define HARL_H
 
 # include <iostream>
+# include <cctype>
 # include <string>
+# include <map>
 
 class Harl {
 	
@@ -28,6 +30,8 @@ class Harl {
 		functionPtr 	getFunctionPtr( std::string level );
 	
 	private:
+		std::map<std::string, functionPtr>	funcMap;
+
 		void	info( void );
 		void	debug( void );
 		void	error( void );

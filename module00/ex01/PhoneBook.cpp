@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/08 11:23:39 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/08 11:29:41 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

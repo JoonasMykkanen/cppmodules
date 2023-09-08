@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 11:42:32 by jmykkane          #+#    #+#             */
-/*   Updated: 2023/09/05 13:32:28 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/08 12:35:37 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ static void	sedIsForLosers(char **args) {
 	std::ifstream	infile;
 	infile.open(filename);
 	if (!infile) {
-        std::cerr << "Unable to open file test.txt";
+        std::cerr << "Error with infile\n";
         return ;
     }
 	
 	std::ofstream	outfile;
 	outfile.open(filename.append(".replace"));
 	if (!outfile) {
-        std::cerr << "Unable to open file test.txt";
+        std::cerr << "Error with outfile\n";
         return ;
     }
 
@@ -46,6 +46,7 @@ static void	sedIsForLosers(char **args) {
 	std::string	line;
     while (std::getline(infile, line)) {
 		output.append(line);
+		output.append("\n");
     }
 	infile.close();
 

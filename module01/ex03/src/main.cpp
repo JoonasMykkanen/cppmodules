@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:24:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/16 10:09:28 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/08 12:16:39 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,13 @@ int	main(void) {
 		club.setType("More dangerous club");
 		jim.attack();
 	}
+
+	// EXTRA TESTS
+	HumanB	joonas("Joonas");
+	Weapon	someWeapon("atleast some weapon");
+	joonas.attack();
+	joonas.setWeapon(someWeapon);
+	joonas.attack();
 
 	return (0);
 }
