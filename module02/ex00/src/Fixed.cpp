@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 12:56:49 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/20 06:43:51 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/11 09:42:10 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fixed::Fixed( void ) {
 	std::cout << "Default constructor called" << std::endl;
-	this->value_ = 0;
+	this->_value = 0;
 }
 
 Fixed::~Fixed( void ) {
@@ -23,23 +23,23 @@ Fixed::~Fixed( void ) {
 
 Fixed::Fixed( Fixed const & other ) {
 	std::cout << "Copy constructor called" << std::endl;
-	this->value_ = other.value_;
+	this->_value = other._value;
 }
 
 Fixed& Fixed::operator=(const Fixed & other) {
 	std::cout << "Copy assigment operator called" << std::endl;
 	if (this != &other) {
-		this->value_ = other.value_;
+		this->_value = other._value;
 	}
 	return (*this);
 }
 
 int	Fixed::getRawBits( void ) {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (this->value_);
+	return (this->_value);
 }
 
 void Fixed::setRawBits( int const raw ) {
 	std::cout << "setRawBits member function called" << std::endl;
-	this->value_ = raw;
+	this->_value = raw;
 }

@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 10:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/20 06:29:58 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/11 09:41:58 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <iostream>
 # include <string>
-
-# define EPSILION 1.0e-7
 
 class Fixed {
 	
@@ -32,8 +30,8 @@ class Fixed {
 		
 	private:
 
-		static const int	fractional_bits_ = 8;
-		int 				value_;
+		static const int	_fractional_bits = 8;
+		int 				_value;
 	
 };
 
