@@ -6,14 +6,13 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:44 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/05 13:27:30 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/12 08:23:13 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-# define LAST_ITEM 40
 # define LENGTH 9
 # define WIDTH 10
 

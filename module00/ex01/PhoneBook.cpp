@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/08 11:29:41 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/12 08:23:16 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,24 +71,6 @@ void	PhoneBook::addContact( void ) {
 	return ;
 }
 
-void	fill(std::string* str, std::string content) {
-	unsigned int	len = content.length();
-	unsigned int	offset = WIDTH - len;
-
-	str->push_back('|');
-	if (len > WIDTH) {
-		content.resize(WIDTH - 1);
-		content.push_back('.');
-	}
-	for (int i = 0; i < (int)offset; i++) {
-		str->push_back(' ');
-	}
-	str->append(content);
-	if (str->length() > LAST_ITEM) {
-		str->push_back('|');
-	}
-}
-
 void	PhoneBook::findContact( void ) {
 	std::stringstream	ss;
 	int	idx = 0;
@@ -108,10 +90,10 @@ void	PhoneBook::findContact( void ) {
         if (nickName.length() > WIDTH)
             nickName = nickName.substr(0, WIDTH - 1) + ".";
 
-        std::cout << '|' << std::setw(WIDTH) << std::left << std::setfill(' ') << indexStr
-                  << '|' << std::setw(WIDTH) << firstName
-                  << '|' << std::setw(WIDTH) << lastName
-                  << '|' << std::setw(WIDTH) << nickName
+        std::cout << '|' << std::setw(WIDTH) << std::right << std::setfill(' ') << indexStr
+                  << '|' << std::setw(WIDTH) << std::right << std::setfill(' ') << firstName
+                  << '|' << std::setw(WIDTH) << std::right << std::setfill(' ') << lastName
+                  << '|' << std::setw(WIDTH) << std::right << std::setfill(' ') << nickName
                   << '|' << std::endl;
         idx++;
     }

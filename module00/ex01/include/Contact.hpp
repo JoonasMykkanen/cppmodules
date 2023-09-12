@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:24:54 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/28 13:11:54 by jmykkane         ###   ########.fr       */
+/*   Updated: 2023/09/12 08:20:21 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ class Contact {
 		static int	getNbInst( void );
 		
 	private:
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickName;
-		std::string	number;
-		std::string secret;
-		bool		filled;
-		int			index;
+		std::string	_firstName;
+		std::string	_lastName;
+		std::string	_nickName;
+		std::string	_number;
+		std::string _secret;
+		bool		_filled;
+		int			_index;
 
 		static int	_nbInst;
 		

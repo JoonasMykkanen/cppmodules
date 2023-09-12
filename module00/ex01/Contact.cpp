@@ -6,20 +6,20 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:24:41 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/02 19:46:34 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/12 08:23:15 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Contact.hpp"
 
 Contact::Contact( void ) {
-	this->index = this->getNbInst();
-	this->filled = false;
-	this->firstName = "";
-	this->lastName = "";
-	this->nickName = "";
-	this->number = "";
-	this->secret = "";
+	this->_index = this->getNbInst();
+	this->_filled = false;
+	this->_firstName = "";
+	this->_lastName = "";
+	this->_nickName = "";
+	this->_number = "";
+	this->_secret = "";
 
 	Contact::_nbInst += 1;
 }
@@ -29,59 +29,59 @@ Contact::~Contact( void ) {
 }
 
 std::string	Contact::getSecret( void ) {
-	return this->secret;
+	return this->_secret;
 }
 
 std::string	Contact::getNumber( void ) {
-	return this->number;
+	return this->_number;
 }
 
 std::string	Contact::getLastName( void ) {
-	return this->lastName;
+	return this->_lastName;
 }
 
 std::string	Contact::getNickName( void ) {
-	return this->nickName;
+	return this->_nickName;
 }
 
 std::string	Contact::getFirstName( void ) {
-	return this->firstName;
+	return this->_firstName;
 }
 
 int	Contact::getIndex( void ) {
-	return this->index;
+	return this->_index;
 }
 
 bool		Contact::getFilled( void ) {
-	return this->filled;
+	return this->_filled;
 }
 
 void	Contact::setIndex( int var ) {
-	this->index = var;
+	this->_index = var;
 }
 
 void	Contact::setFilled( bool var ){
-	this->filled = var;
+	this->_filled = var;
 }
 
 void	Contact::setSecret( std::string var ) {
-	this->secret = var;
+	this->_secret = var;
 }
 
 void	Contact::setNumber( std::string var ) {
-	this->number = var;
+	this->_number = var;
 }
 
 void	Contact::setLastName( std::string var ) {
-	this->lastName = var;
+	this->_lastName = var;
 }
 
 void	Contact::setNickName( std::string var ) {
-	this->nickName = var;
+	this->_nickName = var;
 }
 
 void	Contact::setFirstName( std::string var ) {
-	this->firstName = var;
+	this->_firstName = var;
 }
 
 
