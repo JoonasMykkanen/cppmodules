@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:27:28 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/20 08:45:43 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/11 14:33:30 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int	main( void ) {
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	
+
+	std::cout << "Now trying to assign too large float" << std::endl;
+	Fixed	test( 12309109283091823081123123123028301.0f );
+	std::cout << "test is " << test.toInt() << std::endl;
+
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 10:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/20 14:21:04 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/11 14:23:04 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ class Fixed {
 		
 	private:
 
-		static const int	fractional_bits_ = 8;
-		static const int	factor_ = 1 << fractional_bits_;
-		int 				value_;
+		static const int	_fractional_bits = 8;
+		static const int	_factor = 1 << _fractional_bits;
+		int 				_value;
 	
 };
 
