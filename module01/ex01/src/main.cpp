@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 13:39:19 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/29 09:16:50 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/18 07:57:03 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 int	main(void) {
 	std::string name;
 	int			count;
+
+	// Case without name yet
+	Zombie	zomb;
+	zomb.announce();
 
 	std::cout << "Give two arguments, horde size N and thier name" << std::endl;
 	std::cout << "Count: ";

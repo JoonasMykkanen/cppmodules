@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:26:02 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/08 14:05:30 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/18 08:07:05 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Harl {
 		functionPtr 	getFunctionPtr( std::string level );
 	
 	private:
-		std::map<std::string, functionPtr>	funcMap;
+		std::map<std::string, functionPtr>	_funcMap;
 
 		void	info( void );
 		void	debug( void );

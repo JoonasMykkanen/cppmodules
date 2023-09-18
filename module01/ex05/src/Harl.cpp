@@ -6,17 +6,17 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:44:16 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/08 14:14:20 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/18 08:10:10 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 Harl::Harl( void ) {
-	funcMap["debug"] = &Harl::debug;
-	funcMap["info"] = &Harl::info;
-	funcMap["warning"] = &Harl::warning;
-	funcMap["error"] = &Harl::error;
+	_funcMap["debug"] = &Harl::debug;
+	_funcMap["info"] = &Harl::info;
+	_funcMap["warning"] = &Harl::warning;
+	_funcMap["error"] = &Harl::error;
 }
 
 Harl::~Harl( void ) { }
@@ -45,12 +45,11 @@ void stringToLower(std::string& str) {
 
 Harl::functionPtr Harl::getFunctionPtr( std::string level ) {
 	stringToLower(level);
-	std::map<std::string, functionPtr>::iterator it = funcMap.find(level);
-    if (it != funcMap.end()) {
+	std::map<std::string, functionPtr>::iterator it = _funcMap.find(level);
+    if (it != _funcMap.end()) {
         return it->second;
     }
     return NULL;
-	
 }
 
 void	Harl::complain( std::string level ) {
@@ -60,6 +59,6 @@ void	Harl::complain( std::string level ) {
 		std::cout << level << ": ";
 		(this->*fn)();
 	} else {
-		std::cerr << "Invalid way of complining, could you please even try?\n"; 
+		std::cerr << "Invalid method of complaining, you cant even do that can you!? Sincerely -Harl\n"; 
 	}
 }

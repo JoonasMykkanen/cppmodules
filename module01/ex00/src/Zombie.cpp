@@ -6,14 +6,14 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 09:28:57 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/08 11:31:48 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/18 07:50:34 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Zombie.hpp"
 
 Zombie::Zombie( std::string name ) : _name(name) {
-	this->_name = name;	
+	
 }
 
 Zombie::~Zombie( void ) {
