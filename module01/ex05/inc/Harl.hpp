@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:26:02 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/18 08:07:05 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/18 10:19:00 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ class Harl {
 	private:
 		std::map<std::string, functionPtr>	_funcMap;
 
-		void	info( void );
-		void	debug( void );
-		void	error( void );
-		void	warning( void );
+		void	_info( void );
+		void	_debug( void );
+		void	_error( void );
+		void	_warning( void );
 
 };
 

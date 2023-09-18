@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:48 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/05 13:12:55 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/12 09:01:39 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(void) {
 	while (42) {
 		if (std::cin.eof()) {
             std::cin.clear();
-            std::cout << "\nEOF detected. Exiting..." << std::endl;
+            std::cout << "\nDont you even try... EOF detected, Exiting..." << std::endl;
             exit(1);
         }
 
