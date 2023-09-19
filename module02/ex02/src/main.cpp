@@ -6,20 +6,13 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:27:28 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/20 16:35:33 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/19 16:26:17 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp"
 
-#include "../inc/Fixed.hpp"
-
-#include "../inc/Fixed.hpp"
-
-#include "../inc/Fixed.hpp"
-
 int main() {
-    // Initializing using various constructors
     Fixed a;            // Default constructor
     Fixed b(10);        // Int constructor
     Fixed c(20.5f);     // Float constructor
@@ -76,6 +69,23 @@ int main() {
     // Test conversion to float and int
     std::cout << "c.toFloat(): " << c.toFloat() << std::endl;
     std::cout << "d.toInt(): " << d.toInt() << std::endl;
+
+	// test min and max functions
+	std::cout << std::endl;
+	std::cout << "Testing min max" << std::endl;
+	std::cout << "a is: " << a.toFloat() << " b is: " << b.toFloat() << std::endl;
+	std::cout << "USING MIN: " << Fixed::min(a, b) << std::endl;
+	std::cout << "USING MAX: " << Fixed::max(a, b) << std::endl;
+	
+	// test const min max
+	std::cout << std::endl;
+	std::cout << "and with CONST min max" << std::endl;
+	const Fixed	test1(10);
+	const Fixed	test2(15);
+	std::cout << "a is: " << test1.toFloat() << " b is: " << test2.toFloat() << std::endl;
+	std::cout << "USING MIN: " << Fixed::min(test1, test2) << std::endl;
+	std::cout << "USING MAX: " << Fixed::max(test1, test2) << std::endl;
+	std::cout << std::endl;
 
     return 0;
 }
