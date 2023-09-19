@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:26:02 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/19 14:33:12 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/19 14:39:21 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Harl {
 		functionPtr 	getFunctionPtr( std::string level );
 	
 	private:
+		// Correct way to do it would be to use one std::map :)
 		std::string	_nameMap[4];
 		functionPtr	_ptrMap[4];
 
