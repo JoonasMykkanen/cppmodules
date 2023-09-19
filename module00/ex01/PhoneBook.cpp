@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 08:11:51 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/12 08:23:16 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/12 09:03:06 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ std::string	get_input( std::string msg ) {
 	while (input.empty()) {
 		if (std::cin.eof()) {
             std::cin.clear();
-            std::cout << "\nEOF detected. Exiting..." << std::endl;
+            std::cout << "\nDont you even try... EOF detected, Exiting..." << std::endl;
             exit(1);
         }
 
@@ -101,6 +101,12 @@ void	PhoneBook::findContact( void ) {
 	std::cout << "enter index: ";
 	std::cin >> idx;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+	if (std::cin.eof()) {
+		std::cin.clear();
+		std::cout << "\nDont you even try... EOF detected, Exiting..." << std::endl;
+		exit(1);
+	}
 
 	if (std::cin.fail()) {
 		std::cin.clear();
