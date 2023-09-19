@@ -6,34 +6,38 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:44:16 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/18 08:10:10 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/19 14:32:17 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 Harl::Harl( void ) {
-	_funcMap["debug"] = &Harl::debug;
-	_funcMap["info"] = &Harl::info;
-	_funcMap["warning"] = &Harl::warning;
-	_funcMap["error"] = &Harl::error;
+	_nameMap[0] = "debug";
+	_nameMap[1] = "info";
+	_nameMap[2] = "warning";
+	_nameMap[3] = "error";
+	_ptrMap[0] = &Harl::_debug;
+	_ptrMap[1] = &Harl::_info;
+	_ptrMap[2] = &Harl::_warning;
+	_ptrMap[3] = &Harl::_error;
 }
 
 Harl::~Harl( void ) { }
 
-void Harl::debug( void ) {
+void Harl::_debug( void ) {
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special- ketchup burger. I really do!" << std::endl;
 }
 
-void Harl::info( void ) {
+void Harl::_info( void ) {
 	std::cout << "I cannot believe adding extra bacon costs more money. You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
 }
 
-void Harl::warning( void ) {
+void Harl::_warning( void ) {
 	std::cout << "I think I deserve to have some extra bacon for free. I've been coming for years whereas you started working here since last month." << std::endl;
 }
 
-void Harl::error( void ) {
+void Harl::_error( void ) {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
@@ -45,10 +49,12 @@ void stringToLower(std::string& str) {
 
 Harl::functionPtr Harl::getFunctionPtr( std::string level ) {
 	stringToLower(level);
-	std::map<std::string, functionPtr>::iterator it = _funcMap.find(level);
-    if (it != _funcMap.end()) {
-        return it->second;
-    }
+	
+	for (int idx = 0; idx < MAP_LEN; idx++) {
+		if (level == _nameMap[idx]) {
+			return _ptrMap[idx];
+		}
+	}
     return NULL;
 }
 
