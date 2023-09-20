@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:38 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/01 11:56:48 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 22:20:49 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Animal {
 		virtual void	speak( void ) = 0;
 		
 	protected:
-		std::string	type_;
+		std::string	_type;
 };
 
 #endif // !ANIMAL_H

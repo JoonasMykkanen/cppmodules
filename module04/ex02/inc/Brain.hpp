@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 09:16:17 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/01 10:07:29 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 22:22:21 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Brain {
 		std::string	getIdea( int index);
 		
 	private:
-		std::string	ideas_[100];
+		std::string	_ideas[100];
 };
 
 #endif // !BRAIN_H

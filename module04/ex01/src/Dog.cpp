@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/01 11:52:35 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 22:14:32 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 Dog::Dog( void ) : Animal("Dog") {
 	std::cout << "Dog default constructor called" << std::endl;
-	ideas_ = new Brain();
+	_ideas = new Brain();
 }
 
 Dog::Dog( Dog const & other ) {
 	std::cout << "Dog copy constructor called" << std::endl;
-	ideas_ = new Brain(*other.ideas_);
-	index_ = other.index_;
-	type_ = other.type_;
+	_ideas = new Brain(*other._ideas);
+	_index = other._index;
+	_type = other._type;
 }
 
 Dog& Dog::operator=( Dog const & other ) {
 	std::cout << "Dog equal operator overload called" << std::endl;	
 	if (this != &other) {
-		ideas_ = new Brain(*other.ideas_);
-		index_ = other.index_;
-		type_ = other.type_;
+		_ideas = new Brain(*other._ideas);
+		_index = other._index;
+		_type = other._type;
 	}
 	return (*this);
 }
 
 Dog::~Dog( void ) {
 	std::cout << "Dog destructor called" << std::endl;
-	delete ideas_;
+	delete _ideas;
 }
 
 void	Dog::makeSound( void ) const {
@@ -44,10 +44,10 @@ void	Dog::makeSound( void ) const {
 }
 
 void	Dog::think( std::string tought ) {
-	ideas_->setIdea(index_, tought);
-	index_++;
+	_ideas->setIdea(_index, tought);
+	_index++;
 }
 
 void	Dog::speak( void ) {
-	std::cout << ideas_->getIdea(index_ - 1) << std::endl;
+	std::cout << _ideas->getIdea(_index - 1) << std::endl;
 }

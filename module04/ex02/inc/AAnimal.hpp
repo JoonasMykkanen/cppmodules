@@ -33,7 +33,7 @@ class AAnimal {
 		virtual void	speak( void ) = 0;
 		
 	protected:
-		std::string	type_;
+		std::string	_type;
 };
 
 #endif // !ANIMAL_H

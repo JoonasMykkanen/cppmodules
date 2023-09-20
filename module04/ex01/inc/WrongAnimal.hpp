@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:38 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/31 13:51:26 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 15:25:02 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class WrongAnimal {
 		void		makeSound( void ) const;
 
 	protected:
-		std::string	type_;
+		std::string	_type;
 
 	private:
 	

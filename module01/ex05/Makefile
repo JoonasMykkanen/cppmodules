@@ -6,7 +6,7 @@
 #    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 13:29:24 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/08/31 07:43:46 by joonasmykka      ###   ########.fr        #
+#    Updated: 2023/09/20 14:58:09 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,10 @@ OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCFILES))
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-all: $(OBJECTS)
+$(NAME): $(OBJECTS)
 	@echo "compiling"
-	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+
+all: $(NAME)
 
 clean:
 	@echo "cleaning"

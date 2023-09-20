@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 13:34:42 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 15:13:35 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal( void ) {
 	std::cout << "Animal default constructor called" << std::endl;
-	_type = "";
+	_type = "None";
 }
 
 Animal::Animal( std::string type ) {
@@ -44,5 +44,5 @@ std::string	Animal::getType( void ) const {
 }
 
 void	Animal::makeSound( void ) const {
-	
+	std::cout << "ambiguous animal sounds.." << std::endl;
 }

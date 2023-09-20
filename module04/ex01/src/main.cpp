@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:51:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/01 12:18:25 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 15:38:26 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,20 @@ int	main( void ) {
 	// Deleting og before using copied one, shallow copy would result in seg fault here
 	delete og_dog;
 	// Trying to speak the idea from new object
+	std::cout << std::endl;
 	copy_dog->speak();
+	std::cout << std::endl;
 	// Shallow copy would also result in double free here
 	delete copy_dog;
 	std::cout << std::endl;
-	// Proving deep copy
-	Cat* og_cat = new Cat();
-	og_cat->think("I think I am a cat");
-	// Copying object to another
-	Cat *copy_cat = new Cat();
-	*copy_cat = *og_cat;
-	// Deleting og before using copied one, shallow copy would result in seg fault here
-	delete og_cat;
-	// Trying to speak the idea from new object
-	copy_cat->speak();
-	// Shallow copy would also result in double free here
-	delete copy_cat;
-	std::cout << std::endl;
+
+	std::cout << "Also testing subject's test" << std::endl;
+	Dog	basic;
+	basic.think("First tought");
+	{
+		Dog tmp = basic;
+	}
+	basic.speak();
 	
 	return 0;
 }

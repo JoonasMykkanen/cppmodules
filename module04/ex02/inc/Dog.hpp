@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 12:16:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/08/01 12:30:37 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 22:23:14 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Dog : public AAnimal {
 		void	think( std::string tought );
 
 	private:
-		int		index_;
-		Brain*	ideas_;
+		int		_index;
+		Brain*	_brain;
 
 };
 

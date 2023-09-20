@@ -14,23 +14,23 @@
 
 AAnimal::AAnimal( void ) {
 	std::cout << "AAnimal default constructor called" << std::endl;
-	type_ = "";
+	_type = "";
 }
 
 AAnimal::AAnimal( std::string type ) {
 	std::cout << "AAnimal variable constructor called" << std::endl;
-	type_ = type;
+	_type = type;
 }
 
 AAnimal::AAnimal( AAnimal const & other ) {
 	std::cout << "AAnimal copy constructor called" << std::endl;
-	type_ = other.type_;
+	_type = other._type;
 }
 
 AAnimal& AAnimal::operator=( AAnimal const & other ) {
 	std::cout << "AAnimal equal operator overload called" << std::endl;	
 	if (this != &other) {
-		type_ = other.type_;
+		_type = other._type;
 	}
 	return (*this);
 }
@@ -40,5 +40,5 @@ AAnimal::~AAnimal( void ) {
 }
 
 std::string	AAnimal::getType( void ) const {
-	return type_;
+	return _type;
 }
