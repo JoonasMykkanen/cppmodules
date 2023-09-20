@@ -6,34 +6,34 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:47:52 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/28 10:48:51 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 11:24:26 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int	main( void ) {
-	ClapTrap char1("char1");
-	ClapTrap char2("char2");
+	ClapTrap bob("bob");
+	ClapTrap lisa("lisa");
 
-	char1.attack("char2");
-	char2.takeDamage(0);
-	char2.beRepaired(1);
-	char2.beRepaired(2);
-	char2.beRepaired(3);
-	char2.beRepaired(4);
-	char2.beRepaired(5);
-	char2.beRepaired(6);
-	char2.beRepaired(7);
-	char2.beRepaired(8);
-	char2.beRepaired(9);
-	char2.beRepaired(10);
-	char2.beRepaired(11);
-	char2.attack("char1");
-	std::cout << "char1 gets hit by a car!!!!\n";
-	char1.takeDamage(800);
-	char1.beRepaired(1);
-	char1.takeDamage(0);
+	bob.attack("lisa");
+	lisa.takeDamage(0);
+	lisa.beRepaired(1);
+	lisa.beRepaired(2);
+	lisa.beRepaired(3);
+	lisa.beRepaired(4);
+	lisa.beRepaired(5);
+	lisa.beRepaired(6);
+	lisa.beRepaired(7);
+	lisa.beRepaired(8);
+	lisa.beRepaired(9);
+	lisa.beRepaired(10);
+	lisa.beRepaired(11);
+	lisa.attack("bob");
+	std::cout << "bob gets hit by a car!!!!\n";
+	bob.takeDamage(800);
+	bob.beRepaired(1);
+	bob.takeDamage(0);
 
 	return (0);
 }

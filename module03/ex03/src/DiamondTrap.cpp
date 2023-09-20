@@ -6,23 +6,23 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 11:35:57 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/31 11:23:48 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 12:45:40 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : FragTrap(), ScavTrap() {
+DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap() {
     std::cout << "DiamondTrap default constructor called" << std::endl;
-	energyPoints_ = ::ScavTrap::energyPoints_;
-	attackDamage_ = FragTrap::attackDamage_;
-	health_ = FragTrap::health_;
-	name_ = "none";
+	_energyPoints = ::ScavTrap::_energyPoints;
+	_attackDamage = FragTrap::_attackDamage;
+	_health = FragTrap::_health;
+	_name = "None";
 }
 
-DiamondTrap::DiamondTrap(std::string name) : FragTrap(name), ScavTrap(name) {
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name") {
     std::cout << "DiamondTrap named constructor called" << std::endl;
-    name_ = name;
+    _name = name;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & other) {
@@ -33,7 +33,7 @@ DiamondTrap::DiamondTrap(DiamondTrap const & other) {
 DiamondTrap& DiamondTrap::operator=(DiamondTrap const & other) {
     std::cout << "DiamondTrap assignment operator called" << std::endl;
     if (this != &other) {
-        name_ = other.name_;
+        _name = other._name;
     }
     return *this;
 }
@@ -47,5 +47,5 @@ void DiamondTrap::attack(const std::string& target) {
 }
 
 void DiamondTrap::whoAmI() {
-    std::cout << "My name is " << name_ << " and my ClapTrap name is " << ClapTrap::name_ << std::endl;
+    std::cout << "My name is " << this->_name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
 }

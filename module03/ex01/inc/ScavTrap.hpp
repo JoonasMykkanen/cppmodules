@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 10:49:58 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/31 11:27:43 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 11:20:05 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ class ScavTrap : public ClapTrap {
 
 	private:
 
-		
-	
 };
 
 #endif // !SCAVTRAP_H

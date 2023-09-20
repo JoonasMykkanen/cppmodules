@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:48:23 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/28 10:36:08 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 11:11:48 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ class ClapTrap {
 
 	private:
 		
-		std::string	name_;
-		int			health_;
-		int			energyPoints_;
-		int			attackDamage_;
+		std::string	_name;
+		int			_health;
+		int			_energyPoints;
+		int			_attackDamage;
 
 };
 

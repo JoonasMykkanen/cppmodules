@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 11:34:33 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/28 11:39:33 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 11:38:31 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class FragTrap : public ClapTrap {
 		~FragTrap( void );
 
 		void	highFivesGuys( void );
+
+	private:
 	
 };
 
