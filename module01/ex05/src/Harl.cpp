@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:44:16 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/19 14:34:21 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 14:43:45 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void Harl::_error( void ) {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void stringToLower(std::string& str) {
+void Harl::StringToLower(std::string& str) {
     for (std::string::iterator it = str.begin(); it != str.end(); ++it) {
         *it = std::tolower(static_cast<unsigned char>(*it));
     }
 }
 
 Harl::functionPtr Harl::getFunctionPtr( std::string level ) {
-	stringToLower(level);
+	Harl::StringToLower(level);
 	
 	for (int idx = 0; idx < MAP_LEN; idx++) {
 		if (level == _nameMap[idx]) {

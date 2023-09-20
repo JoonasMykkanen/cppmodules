@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:26:02 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/19 14:39:47 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 14:43:04 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Harl {
 		~Harl( void );
 
 		void    complain( std::string level );
+		void	StringToLower(std::string& str);
 
 		typedef void	(Harl::*functionPtr)();
 		functionPtr 	getFunctionPtr( std::string level );
