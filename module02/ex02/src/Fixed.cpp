@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 12:56:49 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/19 18:04:06 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:48:11 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ Fixed Fixed::operator*( const Fixed& other ) const {
 }
 
 Fixed Fixed::operator/( const Fixed& other ) const {
+	if (other._value == 0) 
+		std::cout << "Error: Division by zero\n";
 	Fixed	result(*this);
 	result._value = (result._value << _fractional_bits) / other._value;
 	return (result);

@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:05:02 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/26 12:07:12 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/19 18:07:19 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class Point {
 		
 	private:
 		
-		Fixed const	x_;
-		Fixed const y_;
+		Fixed const	_x;
+		Fixed const _y;
 		
 };
 

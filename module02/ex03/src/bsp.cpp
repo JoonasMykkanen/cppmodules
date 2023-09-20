@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:26:13 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/27 11:40:36 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:52:41 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static Fixed calculateArea( Point const p1, Point const p2, Point const p3 ) {
 // Area A = [ x1(y2 – y3) + x2(y3 – y1) + x3(y1-y2)]/2 
 bool bsp( Point const a, Point const b, Point const c, Point const point ) {
 	Fixed	triangle = calculateArea(a, b, c);
-	Fixed	area1 = calculateArea(point, a, b);	
+	Fixed	area1 = calculateArea(point, a, b);
 	Fixed	area2 = calculateArea(point, b, c);
 	Fixed	area3 = calculateArea(point, c, a);
 	Fixed	sum = area1 + area2 + area3;

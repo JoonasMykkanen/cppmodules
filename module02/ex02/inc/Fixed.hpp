@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 10:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/19 17:11:47 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:35:06 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 # include <cmath>
+
+std::ostream& operator<<( std::ostream& os, const Fixed& obj );
 
 class Fixed {
 	
@@ -27,9 +29,6 @@ class Fixed {
 		Fixed( Fixed const & other );
 		Fixed& operator=( Fixed const & other );
 		~Fixed ( void );
-		
-		// Output redirection
-		friend std::ostream& operator<<( std::ostream& os, const Fixed& obj );
 
 		// Comparisons
 		bool operator>( const Fixed& other ) const;

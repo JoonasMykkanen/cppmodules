@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 12:56:49 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/11 14:23:39 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:19:28 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ int	Fixed::toInt( void ) const {
 	return (_value >> _fractional_bits);
 }
 
-// Operator overloads || overwrite default behaviour
 std::ostream& operator<<( std::ostream& os, const Fixed& obj ) {
-	os << static_cast<float>(obj.toFloat());
+	os << obj.toFloat();
 	return (os);
 }

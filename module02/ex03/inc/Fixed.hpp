@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 10:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/26 09:37:05 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:38:06 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 # include <cmath>
+
+std::ostream& operator<<( std::ostream& os, const Fixed& obj );
 
 class Fixed {
 	
@@ -27,18 +29,28 @@ class Fixed {
 		Fixed( Fixed const & other );
 		Fixed& operator=( Fixed const & other );
 		~Fixed ( void );
+
+		// Comparisons
+		bool operator>( const Fixed& other ) const;
+		bool operator<( const Fixed& other ) const;
+		bool operator>=( const Fixed& other ) const;
+		bool operator<=( const Fixed& other ) const;
+		bool operator==( const Fixed& other ) const;
+		bool operator!=( const Fixed& other ) const;
+
+		// Arithmetic
+		Fixed operator+( const Fixed& other ) const;
+		Fixed operator-( const Fixed& other ) const;
+		Fixed operator*( const Fixed& other ) const;
+		Fixed operator/( const Fixed& other ) const;
+
+		// Overloaded min / max functions
+		static Fixed&	min( Fixed& point1, Fixed& point2 );
+		static Fixed&	max( Fixed& point1, Fixed& point2 );
+		static const Fixed&	min( const Fixed& point1, const Fixed& point2 );
+		static const Fixed&	max( const Fixed& point1, const Fixed& point2 );
 		
-		friend std::ostream& operator<<( std::ostream& os, const Fixed& obj );
-		friend bool operator>( const Fixed& point1, const Fixed& point2 );
-		friend bool operator<( const Fixed& point1, const Fixed& point2 );
-		friend bool operator>=( const Fixed& point1, const Fixed& point2 );
-		friend bool operator<=( const Fixed& point1, const Fixed& point2 );
-		friend bool operator==( const Fixed& point1, const Fixed& point2 );
-		friend bool operator!=( const Fixed& point1, const Fixed& point2 );
-		friend Fixed operator+( const Fixed& point1, const Fixed& point2 );
-		friend Fixed operator-( const Fixed& point1, const Fixed& point2 );
-		friend Fixed operator*( const Fixed& point1, const Fixed& point2 );
-		friend Fixed operator/( const Fixed& point1, const Fixed& point2 );
+		// 	Increment / decrement
 		Fixed&	operator++( void );		// pre-increment	(++i)
 		Fixed	operator++( int );		// post-increment	(i++)
 		Fixed&	operator--( void );		// pre-decrement	(--i)
@@ -51,9 +63,9 @@ class Fixed {
 		
 	private:
 
-		static const int	fractional_bits_ = 8;
-		static const int	factor_ = 1 << fractional_bits_;
-		int 				value_;
+		static const int	_fractional_bits = 8;
+		static const int	_factor = 1 << _fractional_bits;
+		int 				_value;
 	
 };
 

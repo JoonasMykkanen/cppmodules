@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:27:28 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/11 14:33:30 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:21:36 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,30 @@ int	main( void ) {
 
 	a = Fixed(1234.4321f );
 
+	std::cout << std::endl;
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
+	std::cout << std::endl;
 
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << std::endl;
 
-	std::cout << "Now trying to assign too large float" << std::endl;
-	Fixed	test( 12309109283091823081123123123028301.0f );
-	std::cout << "test is " << test.toInt() << std::endl;
+	std::cout << "a is " << a.toFloat() << " as float" << std::endl;
+	std::cout << "b is " << b.toFloat() << " as float" << std::endl;
+	std::cout << "c is " << c.toFloat() << " as float" << std::endl;
+	std::cout << "d is " << d.toFloat() << " as float" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "a is " << a << " using operator overload" << std::endl;
+	std::cout << "b is " << b << " using operator overload" << std::endl;
+	std::cout << "c is " << c << " using operator overload" << std::endl;
+	std::cout << "d is " << d << " using operator overload" << std::endl;
+	std::cout << std::endl;
 
 	return (0);
 }

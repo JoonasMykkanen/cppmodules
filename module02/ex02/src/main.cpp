@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:27:28 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/19 16:26:17 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:37:10 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,10 @@ int main() {
 	std::cout << "USING MIN: " << Fixed::min(test1, test2) << std::endl;
 	std::cout << "USING MAX: " << Fixed::max(test1, test2) << std::endl;
 	std::cout << std::endl;
+
+	std::cout << "trying division by zero" << std::endl;
+	const Fixed test3(0);
+	// test1 = test1 / test3;
 
     return 0;
 }

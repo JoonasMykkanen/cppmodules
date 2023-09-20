@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 10:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/11 14:23:04 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:37:30 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <iostream>
 # include <string>
 # include <cmath>
-
-# define EPSILION 1.0e-7
+		
+std::ostream& operator<<( std::ostream& os, const Fixed& obj );
 
 class Fixed {
 	
@@ -30,7 +30,6 @@ class Fixed {
 		Fixed& operator=( Fixed const & other );
 		~Fixed ( void );
 		
-		friend std::ostream& operator<<( std::ostream& os, const Fixed& obj );
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
