@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/31 13:25:40 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 13:34:42 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 Animal::Animal( void ) {
 	std::cout << "Animal default constructor called" << std::endl;
-	type_ = "";
+	_type = "";
 }
 
 Animal::Animal( std::string type ) {
 	std::cout << "Animal variable constructor called" << std::endl;
-	type_ = type;
+	_type = type;
 }
 
 Animal::Animal( Animal const & other ) {
 	std::cout << "Animal copy constructor called" << std::endl;
-	type_ = other.type_;
+	_type = other._type;
 }
 
 Animal& Animal::operator=( Animal const & other ) {
 	std::cout << "Animal equal operator overload called" << std::endl;	
 	if (this != &other) {
-		type_ = other.type_;
+		_type = other._type;
 	}
 	return (*this);
 }
@@ -40,7 +40,7 @@ Animal::~Animal( void ) {
 }
 
 std::string	Animal::getType( void ) const {
-	return type_;
+	return _type;
 }
 
 void	Animal::makeSound( void ) const {

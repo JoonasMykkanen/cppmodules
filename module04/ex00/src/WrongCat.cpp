@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/31 13:49:22 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 13:57:52 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ WrongCat::WrongCat( void ) : WrongAnimal("WrongCat") {
 
 WrongCat::WrongCat( WrongCat const & other ) {
 	std::cout << "WrongCat copy constructor called" << std::endl;
-	type_ = other.type_;
+	_type = other._type;
 }
 
 WrongCat& WrongCat::operator=( WrongCat const & other ) {
 	std::cout << "WrongCat equal operator overload called" << std::endl;	
 	if (this != &other) {
-		type_ = other.type_;
+		_type = other._type;
 	}
 	return (*this);
 }

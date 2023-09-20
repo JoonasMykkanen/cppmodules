@@ -6,7 +6,7 @@
 #    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 13:29:24 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/07/26 12:19:04 by joonasmykka      ###   ########.fr        #
+#    Updated: 2023/09/20 11:20:48 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,13 @@ SRCFILES = main.cpp Fixed.cpp Point.cpp bsp.cpp
 SOURCES = $(patsubst %, $(SRCDIR)/%, $(SRCFILES))
 OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCFILES))
 
+all: $(NAME)
+
+$(NAME): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
-
-all: $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJECTS)

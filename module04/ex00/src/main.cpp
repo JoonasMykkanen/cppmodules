@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:51:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/07/31 13:54:55 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 13:58:33 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,26 @@
 
 int	main( void ) {
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << std::endl;
+	std::cout << "Animal type: " << meta->getType() << std::endl;
+	std::cout << "dog type: " << dog->getType() << std::endl;
+	std::cout << "cat type: " << cat->getType() << std::endl;
 	std::cout << std::endl;
 	std::cout << "Calling makeSound() from Cat object:" << std::endl;
-	i->makeSound();
+	cat->makeSound();
 	std::cout << std::endl;
 	std::cout << "Calling makeSound() from Dog object:" << std::endl;
-	j->makeSound();
+	dog->makeSound();
+	std::cout << std::endl;
+	std::cout << "Calling makeSound() from Animal object:" << std::endl;
 	meta->makeSound();
 	std::cout << std::endl;
 
-	delete i;
-	delete j;
+	delete dog;
+	delete cat;
 	delete meta;
 
 	std::cout << std::endl;
