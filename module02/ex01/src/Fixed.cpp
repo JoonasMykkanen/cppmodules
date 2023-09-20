@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 12:56:49 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 09:19:28 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:59:42 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	Fixed::toInt( void ) const {
 	return (_value >> _fractional_bits);
 }
 
-std::ostream& operator<<( std::ostream& os, const Fixed& obj ) {
+std::ostream& operator<<( std::ostream& os, const class Fixed& obj ) {
 	os << obj.toFloat();
 	return (os);
 }

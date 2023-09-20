@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:27:28 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 09:37:10 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 10:56:49 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,14 @@ int main() {
 	std::cout << std::endl;
 
 	std::cout << "trying division by zero" << std::endl;
-	const Fixed test3(0);
-	// test1 = test1 / test3;
-
+	Fixed test5(5);
+	Fixed test3(0);
+	Fixed test4(10);
+	try {
+		test5 = test4 / test3;
+	}
+	catch (std::exception e){ }
+	std::cout << test5 << std::endl;
     return 0;
 }
 

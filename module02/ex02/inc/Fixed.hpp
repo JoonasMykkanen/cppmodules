@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 10:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 09:35:06 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:59:09 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 # include <cmath>
 
-std::ostream& operator<<( std::ostream& os, const Fixed& obj );
+std::ostream& operator<<( std::ostream& os, const class Fixed& obj );
 
 class Fixed {
 	

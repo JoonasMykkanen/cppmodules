@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 12:56:49 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 09:48:11 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 10:10:10 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	Fixed::toInt( void ) const {
 }
 
 // Operator overloads || overwrite default behaviour
-std::ostream& operator<<( std::ostream& os, const Fixed& obj ) {
+std::ostream& operator<<( std::ostream& os, const class Fixed& obj ) {
 	os << obj.toFloat();
 	return (os);
 }
@@ -110,8 +110,10 @@ Fixed Fixed::operator*( const Fixed& other ) const {
 }
 
 Fixed Fixed::operator/( const Fixed& other ) const {
-	if (other._value == 0) 
-		std::cout << "Error: Division by zero\n";
+	if (other._value == 0) {
+		std::cerr << "Error: Division by zero\n";
+		throw std::runtime_error("Division by zero");
+	}
 	Fixed	result(*this);
 	result._value = (result._value << _fractional_bits) / other._value;
 	return (result);
