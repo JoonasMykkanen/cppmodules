@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:27:28 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 10:56:49 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/21 07:31:03 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,21 @@ int main() {
     Fixed b(10);        // Int constructor
     Fixed c(20.5f);     // Float constructor
     Fixed d(b);         // Copy constructor
-    a = Fixed(30);      // Assignment operator
+    a = Fixed(300.5f);      // Assignment operator
 
     // Displaying initial values
     std::cout << "Initial values:" << std::endl;
     std::cout << "a: " << a << " b: " << b << " c: " << c << " d: " << d << std::endl;
-
-    // Test getters
-    std::cout << "a.getRawBits(): " << a.getRawBits() << std::endl;
-    std::cout << "b.getRawBits(): " << b.getRawBits() << std::endl;
-
-    // Test setters
-    a.setRawBits(15);
-    std::cout << "After a.setRawBits(15), a: " << a << std::endl;
+	std::cout << std::endl;
 
     // Test comparison operators
-	std::cout << "a: " << a << " b: " << b << " c: " << c << " d: " << d << std::endl;
     std::cout << "a > b: " << (a > b) << std::endl;
     std::cout << "a < b: " << (a < b) << std::endl;
     std::cout << "a >= b: " << (a >= b) << std::endl;
     std::cout << "a <= b: " << (a <= b) << std::endl;
     std::cout << "a == b: " << (a == b) << std::endl;
     std::cout << "a != b: " << (a != b) << std::endl;
+	std::cout << std::endl;
 
     // Test arithmetic operators
 	std::cout << "a: " << a << " b: " << b << " c: " << c << " d: " << d << std::endl;
@@ -46,25 +39,36 @@ int main() {
     Fixed diff = a - b;
     Fixed prod = a * b;
     Fixed quotient = a / b;
-
-    std::cout << "After arithmetic operations:" << std::endl;
-	std::cout << "a: " << a << " b: " << b << " c: " << c << " d: " << d << std::endl;
     std::cout << "a + b: " << sum << std::endl;
     std::cout << "a - b: " << diff << std::endl;
     std::cout << "a * b: " << prod << std::endl;
     std::cout << "a / b: " << quotient << std::endl;
+	std::cout << std::endl;
 
     // Test pre-increment/decrement
-    std::cout << "Before pre-increment/decrement, a: " << a << " b: " << b << std::endl;
-    ++a;
-    --b;
-    std::cout << "After pre-increment/decrement, a: " << a << " b: " << b << std::endl;
-
-    // Test post-increment/decrement
-    std::cout << "Before post-increment/decrement, a: " << a << " b: " << b << std::endl;
-    a++;
-    b--;
-    std::cout << "After post-increment/decrement, a: " << a << " b: " << b << std::endl;
+	Fixed	test(10);
+	std::cout << "Testing test and after incrementing and decrementing\n";
+	if (test++ > 10)
+		std::cout << "SHOULD NOT BE HERE\n";
+	else
+		std::cout << "incremented after comparison original 10 and now: " << test << std::endl;
+	std::cout << "comparing: if (--test == 10)\n";
+	if (--test == 10)
+		std::cout << "true\n";
+	else
+		std::cout << "SHOUDL NOT BE HERE\n";
+	std::cout << "comparing: if (++test > 10)\n";
+	if (++test > 10)
+		std::cout << "true\n";
+	else
+		std::cout << "SHOUDL NOT BE HERE\n";
+	std::cout << "test now " << test << " and gonna test if (test-- < 10) should return false\n";
+	if (test-- < 10)
+		std::cout << "SHOULD NOT BE HERE\n";
+	else
+		std::cout << "false\n";
+	std::cout << "final value should be the original 10 --> " << test << std::endl;
+	std::cout << std::endl;
 
     // Test conversion to float and int
     std::cout << "c.toFloat(): " << c.toFloat() << std::endl;

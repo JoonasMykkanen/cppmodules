@@ -6,15 +6,14 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 12:56:49 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 10:59:00 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/21 07:31:32 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp"
 
-Fixed::Fixed( void ) {
+Fixed::Fixed( void ) : _value(0) {
 	// std::cout << "Default constructor called" << std::endl;
-	_value = 0;
 }
 
 Fixed::Fixed( const int value ) : _value(value << _fractional_bits) {
