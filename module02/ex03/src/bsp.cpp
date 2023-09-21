@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:26:13 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/21 12:00:17 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/21 12:06:49 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static const Fixed EPSILON(0.0039f);
 static Fixed crossProduct(Point A, Point B, Point P) {
 	Fixed result = (B.getX() - A.getX()) * (P.getY() - A.getY()) - (B.getY() - A.getY()) * (P.getX() - A.getX());
 
-	if (std::abs(result.getRawBits()) < EPSILON.getRawBits())
+	if (result.getRawBits() == EPSILON.getRawBits())
     	return Fixed(0);
 	return result;
 }
