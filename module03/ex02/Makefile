@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
+#    By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 13:29:24 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/09/20 11:21:11 by joonasmykka      ###   ########.fr        #
+#    Updated: 2023/09/25 10:32:56 by jmykkane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = $(INC) -Wall -Wextra -Werror
 
 SRCDIR = src
 OBJDIR = obj
-SRCFILES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCFILES = main.cpp ClapTrap.cpp FragTrap.cpp
 SOURCES = $(patsubst %, $(SRCDIR)/%, $(SRCFILES))
 OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCFILES))
 

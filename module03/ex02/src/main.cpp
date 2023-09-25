@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:47:52 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 11:42:05 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/25 10:32:46 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
-#include "../inc/ScavTrap.hpp"
 #include "../inc/FragTrap.hpp"
 #include <iostream>
 
