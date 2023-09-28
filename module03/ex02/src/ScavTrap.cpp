@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 10:50:30 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/28 09:51:37 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/20 12:27:32 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,5 @@ void	ScavTrap::attack( const std::string& target ) {
 }
 
 void	ScavTrap::guardGate( void ) {
-	if (_health > 0 && _energyPoints > 0) {
-		std::cout << "ScavTrap " << _name << " is guarding gate now." << std::endl;
-	}
+	std::cout << "ScavTrap " << _name << " is guarding gate now." << std::endl;
 }

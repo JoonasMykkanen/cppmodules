@@ -6,34 +6,33 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:47:52 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 11:24:26 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/28 08:24:50 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int	main( void ) {
-	ClapTrap bob("bob");
-	ClapTrap lisa("lisa");
+    // Testing ClapTrap parameterized constructor
+    ClapTrap clap_named("ClapNamed");
+    clap_named.attack("EnemyB");  // Should not attack since attackDamage is 0
+    clap_named.takeDamage(0);
+    clap_named.beRepaired(5);
+    std::cout << std::endl;
 
-	bob.attack("lisa");
-	lisa.takeDamage(0);
-	lisa.beRepaired(1);
-	lisa.beRepaired(2);
-	lisa.beRepaired(3);
-	lisa.beRepaired(4);
-	lisa.beRepaired(5);
-	lisa.beRepaired(6);
-	lisa.beRepaired(7);
-	lisa.beRepaired(8);
-	lisa.beRepaired(9);
-	lisa.beRepaired(10);
-	lisa.beRepaired(11);
-	lisa.attack("bob");
-	std::cout << "bob gets hit by a car!!!!\n";
-	bob.takeDamage(800);
-	bob.beRepaired(1);
-	bob.takeDamage(0);
+    // Testing ClapTrap copy constructor
+    ClapTrap clap_copied(clap_named);
+    clap_copied.attack("EnemyC");  // Should not attack since attackDamage is 0
+    clap_copied.takeDamage(0);
+    clap_copied.beRepaired(5);
+    std::cout << std::endl;
+
+    // Testing ClapTrap assignment operator
+    ClapTrap clap_assigned = clap_named;
+    clap_assigned.attack("EnemyD");  // Should not attack since attackDamage is 0
+    clap_assigned.takeDamage(0);
+    clap_assigned.beRepaired(5);
+    std::cout << std::endl;
 
 	return (0);
 }
