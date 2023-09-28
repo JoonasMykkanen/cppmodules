@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 11:35:57 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 12:26:22 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/28 12:11:44 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ FragTrap::~FragTrap( void ) {
 }
 
 void	FragTrap::highFivesGuys( void ) {
-	std::cout << "Fragtrap "<< _name << " positively requests highfives from claps and traps :3" << std::endl;	
+	if (_health > 0 && _energyPoints > 0) {
+		std::cout << "Fragtrap "<< _name << " positively requests highfives from claps and traps :3" << std::endl;
+	}
 }

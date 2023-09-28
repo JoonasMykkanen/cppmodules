@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:47:52 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/28 09:52:39 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/28 12:17:23 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,35 @@
 #include "../inc/DiamondTrap.hpp"
 
 int main() {
-    // Testing DiamondTrap parameterized constructor
+	DiamondTrap enemy("enemy");
     DiamondTrap diamond_named("DiamondNamed");
-    diamond_named.attack("EnemyA");
-    diamond_named.takeDamage(30); 
-    diamond_named.beRepaired(15);
+	DiamondTrap diamond_copied(diamond_named);
+	DiamondTrap diamond_assigned = diamond_named;
+	std::cout << std::endl;
+	
+    // Testing DiamondTrap parameterized constructor
+    diamond_named.attack("enemy");
+    enemy.takeDamage(30); 
+    enemy.beRepaired(15);
     diamond_named.guardGate();
     diamond_named.highFivesGuys();
     diamond_named.whoAmI();
     std::cout << std::endl;
 
     // Testing DiamondTrap copy constructor
-    DiamondTrap diamond_copied(diamond_named);
-    diamond_copied.attack("EnemyB");
-    diamond_copied.takeDamage(30); 
-    diamond_copied.beRepaired(20);
+    
+    diamond_copied.attack("enemy");
+    enemy.takeDamage(30); 
+    enemy.beRepaired(20);
     diamond_copied.guardGate();
     diamond_copied.highFivesGuys();
     diamond_copied.whoAmI();
     std::cout << std::endl;
 
     // Testing DiamondTrap assignment operator
-    DiamondTrap diamond_assigned = diamond_named;
-    diamond_assigned.attack("EnemyC");
-    diamond_assigned.takeDamage(30); 
-    diamond_assigned.beRepaired(25);
+    diamond_assigned.attack("enemy");
+    enemy.takeDamage(30); 
+    enemy.beRepaired(25);
     diamond_assigned.guardGate();
     diamond_assigned.highFivesGuys();
     diamond_assigned.whoAmI();
