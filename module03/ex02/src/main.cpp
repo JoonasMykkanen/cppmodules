@@ -6,12 +6,11 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:47:52 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/28 08:22:43 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/28 09:59:49 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
-#include "../inc/ScavTrap.hpp"
 #include "../inc/FragTrap.hpp"
 #include <iostream>
 
