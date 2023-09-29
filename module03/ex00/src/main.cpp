@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:47:52 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/28 12:10:33 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/29 07:15:33 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ int	main( void ) {
     std::cout << std::endl;
 
 	// Nothing should work after this
-	std::cout << "clappyASSIGN gets hit by a foodtruck and recieves 800 points of damage\n";
-	clappyASSIGN.takeDamage(800);
-	clappyASSIGN.takeDamage(800);
-    clappyASSIGN.beRepaired(5);
+	std::cout << "enemy gets hit by a foodtruck and recieves 800 points of damage\n";
+	enemy.takeDamage(800);
+	enemy.takeDamage(800);
+	enemy.attack("Anyone");
+    enemy.beRepaired(5);
     std::cout << std::endl;
 
 	return (0);

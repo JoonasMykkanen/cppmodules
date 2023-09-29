@@ -6,7 +6,7 @@
 #    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 13:29:24 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/09/20 12:14:11 by joonasmykka      ###   ########.fr        #
+#    Updated: 2023/09/29 07:26:19 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ INC = -I ./inc
 NAME = ex03
 
 CC = c++ -std=c++98
-CFLAGS = $(INC) -Wall -Wextra -Werror -Wshadow -Wno-shadow
+CFLAGS = $(INC) -Wall -Wextra -Werror -Wshadow
 
 SRCDIR = src
 OBJDIR = obj

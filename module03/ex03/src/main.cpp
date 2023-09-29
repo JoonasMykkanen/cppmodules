@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:47:52 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/28 12:17:23 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/29 07:24:36 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main() {
 	DiamondTrap diamond_copied(diamond_named);
 	DiamondTrap diamond_assigned = diamond_named;
 	std::cout << std::endl;
-	
+
     // Testing DiamondTrap parameterized constructor
     diamond_named.attack("enemy");
     enemy.takeDamage(30); 
@@ -32,7 +32,6 @@ int main() {
     std::cout << std::endl;
 
     // Testing DiamondTrap copy constructor
-    
     diamond_copied.attack("enemy");
     enemy.takeDamage(30); 
     enemy.beRepaired(20);
@@ -51,11 +50,12 @@ int main() {
     std::cout << std::endl;
 
     // Demonstrating energy and health depletion for DiamondTrap
-	std::cout << "diamond_assigned gets hit by a car!\n";
-    diamond_assigned.takeDamage(1000);
-	diamond_assigned.takeDamage(30); 
-    diamond_assigned.beRepaired(25);
-    diamond_assigned.guardGate();
+	std::cout << "enemy gets hit by a foodtruck and recieves 800 points of damage\n";
+	enemy.takeDamage(800);
+	enemy.takeDamage(800);
+	enemy.attack("Anyone");
+    enemy.beRepaired(5);
+	diamond_assigned.guardGate();
     diamond_assigned.highFivesGuys();
     diamond_assigned.whoAmI();
     std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:47:52 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/28 12:11:14 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/09/29 07:19:16 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int main() {
 
     // Testing ScavTrap copy constructor
     scavvyCOPY.attack("enemy");
+	enemy.takeDamage(20);
     enemy.beRepaired(5);
     std::cout << std::endl;
 
@@ -42,11 +43,12 @@ int main() {
     std::cout << std::endl;
 
 	// Nothing should work after this
-	std::cout << "scavASSIGN gets hit by a foodtruck and recieves 800 points of damage\n";
-	scavASSIGN.takeDamage(800);
-	scavASSIGN.takeDamage(800);
-    scavASSIGN.beRepaired(5);
-	scavvy.guardGate();
+	std::cout << "enemy gets hit by a foodtruck and recieves 800 points of damage\n";
+	enemy.takeDamage(800);
+	enemy.takeDamage(800);
+	enemy.attack("Anyone");
+    enemy.beRepaired(5);
+	enemy.guardGate();
     std::cout << std::endl;
 
     return (0);
