@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 12:16:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 13:06:28 by joonasmykka      ###   ########.fr       */
+/*   Created: 2023/10/01 13:35:25 by joonasmykka       #+#    #+#             */
+/*   Updated: 2023/10/01 14:09:03 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef ICE_H
+# define ICE_H
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
 
-class Cat : public Animal {
+class Ice : public AMateria {
+	
 	public:
-		Cat( void );
-		Cat( Cat const & other );
-		Cat& operator=( Cat const & other );
-		~Cat( void );
+		Ice( void );
+		Ice( Ice const & other );
+		Ice& operator=( Ice const & other );
+		~Ice( void );
 
-		void	speak( void );
-		void	makeSound( void ) const;
-		void	think( std::string tought );
-
-	private:
-		int		_index;
-		Brain*	_brain;
-
+		void use(int idx, ICharacter& target);
 };
 
-#endif // !CAT_H
+#endif // !ICE_H

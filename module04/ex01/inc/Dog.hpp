@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 12:16:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 15:24:21 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 13:06:32 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Dog : public Animal {
 
 	private:
 		int		_index;
-		Brain*	_ideas;
+		Brain*	_brain;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 22:20:51 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 13:08:26 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,6 @@ std::string	Animal::getType( void ) const {
 	return _type;
 }
 
-void	Animal::makeSound( void ) const { }
+void	Animal::makeSound( void ) const {
+	std::cout << "ambiguous animal sounds.." << std::endl;
+}

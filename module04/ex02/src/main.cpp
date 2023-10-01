@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:51:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 22:30:27 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 13:32:05 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,28 +39,37 @@ int	main( void ) {
 	// Proving deep copy
 	Dog* og_dog = new Dog();
 	og_dog->think("I think I am a dog");
-	// Copying object to another
+	// // Copying object to another
 	Dog *copy_dog = new Dog(*og_dog);
-	// Deleting og before using copied one, shallow copy would result in seg fault here
+	// // Deleting og before using copied one, shallow copy would result in seg fault here
 	delete og_dog;
-	// Trying to speak the idea from new object
+	// // Trying to speak the idea from new object
 	copy_dog->speak();
-	// Shallow copy would also result in double free here
+	// // Shallow copy would also result in double free here
 	delete copy_dog;
 	std::cout << std::endl;
-	// Proving deep copy
+	// // Proving deep copy
 	Cat* og_cat = new Cat();
 	og_cat->think("I think I am a cat");
-	// Copying object to another
-	Cat *copy_cat = new Cat();
-	*copy_cat = *og_cat;
-	// Deleting og before using copied one, shallow copy would result in seg fault here
+	// // Copying object to another
+	Cat *copy_cat = new Cat(*og_cat);
+	// // Deleting og before using copied one, shallow copy would result in seg fault here
 	delete og_cat;
-	// Trying to speak the idea from new object
+	// // Trying to speak the idea from new object
 	copy_cat->speak();
-	// Shallow copy would also result in double free here
+	// // Shallow copy would also result in double free here
 	delete copy_cat;
-	std::cout << std::endl;
 	
+	std::cout << std::endl;
+	std::cout << "Testing stack versions instead of allocated ones\n";
+	Cat c;
+	{
+		Cat	a;
+		a.think("Allocating on stack");
+		Cat	b(a);
+		c = b;
+	}
+	c.speak();
+
 	return 0;
 }

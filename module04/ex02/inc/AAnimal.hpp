@@ -27,10 +27,9 @@ class AAnimal {
 		virtual ~AAnimal( void );
 
 		std::string		getType( void ) const;
-
-		virtual void	think( std::string tought ) = 0;
-		virtual void	makeSound( void ) const = 0;
 		virtual void	speak( void ) = 0;
+		virtual void	makeSound( void ) const = 0;
+		virtual void	think( std::string tought ) = 0;
 		
 	protected:
 		std::string	_type;

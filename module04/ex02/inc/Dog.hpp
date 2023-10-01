@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 12:16:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 22:23:14 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 13:14:26 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Dog : public AAnimal {
 		// and compile-time checking Example: void	speak( void ) override;
 		void	speak( void );
 		void	makeSound( void ) const;
-		void	think( std::string tought );
+		void	think( std::string tought ) ;
 
 	private:
 		int		_index;

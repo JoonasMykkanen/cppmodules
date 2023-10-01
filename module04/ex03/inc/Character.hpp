@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 11:52:38 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 09:03:02 by joonasmykka      ###   ########.fr       */
+/*   Created: 2023/10/01 13:37:41 by joonasmykka       #+#    #+#             */
+/*   Updated: 2023/10/01 13:42:36 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_H
-# define WRONGANIMAL_H
+#ifndef CHARACTER_H
+# define CHARACTER_H
 
-# include <iostream>
-# include <string>
+# define FULL 4
 
-class WrongAnimal {
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
+class Character : public ICharacter {
+	
 	public:
-		WrongAnimal( void );
-		WrongAnimal( std::string type );
-		WrongAnimal( WrongAnimal const & other );
-		WrongAnimal& operator=( WrongAnimal const & other );
-		virtual ~WrongAnimal( void );
-
-		std::string	getType( void ) const;
-		void		makeSound( void ) const;
-
-	protected:
-		std::string	_type;
+		Character();
+		Character( Character const & other );
+		Character& operator=( Character const & other );
+		~Character();
 
 	private:
-	
+		AMateria*	inventory;
+
 };
 
-#endif // !WRONGANIMAL_H
+#endif // !CHARACTER_H

@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:51:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 15:38:26 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 12:18:36 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,34 @@ int	main( void ) {
 	// Copying object to another
 	Dog *copy_dog = new Dog(*og_dog);
 	// Deleting og before using copied one, shallow copy would result in seg fault here
+	// since it only copied pointer or reference to the allocated memory.
 	delete og_dog;
 	// Trying to speak the idea from new object
 	std::cout << std::endl;
 	copy_dog->speak();
 	std::cout << std::endl;
-	// Shallow copy would also result in double free here
+	// Shallow copy would also result in double free here since the memory is already freed when og was deleted
 	delete copy_dog;
 	std::cout << std::endl;
 
+	// With this test if it is not deep copy, tmp will go out of scope and frees its bain.
+	// if it's shallow, its the same memory with basic and when basic speaks afterwards
+	// it would result in a seg fault.
 	std::cout << "Also testing subject's test" << std::endl;
 	Dog	basic;
 	basic.think("First tought");
 	{
-		Dog tmp = basic;
+		Dog test1 = basic;
+		Dog	test2(basic);
 	}
 	basic.speak();
+
+	// test that will cause leaks after removal of virtual destructor keyword.
+	std::cout << std::endl;
+	std::cout << "This test will fail if no correct implementation of destructors (virtual keyword)\n";
+	Animal*	villeveikko = new Dog;
+	delete villeveikko;
+	std::cout << std::endl;
 	
 	return 0;
 }

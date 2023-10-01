@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 12:16:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 13:06:28 by joonasmykka      ###   ########.fr       */
+/*   Created: 2023/10/01 13:35:54 by joonasmykka       #+#    #+#             */
+/*   Updated: 2023/10/01 13:43:36 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef CURE_HHP
+# define CURE_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
 
-class Cat : public Animal {
+class Cure : public AMateria {
+	
 	public:
-		Cat( void );
-		Cat( Cat const & other );
-		Cat& operator=( Cat const & other );
-		~Cat( void );
-
-		void	speak( void );
-		void	makeSound( void ) const;
-		void	think( std::string tought );
-
-	private:
-		int		_index;
-		Brain*	_brain;
-
+		Cure();
+		Cure( Cure const & other );
+		Cure& operator=( Cure const & other );
+		~Cure();
 };
 
-#endif // !CAT_H
+#endif // !CURE_HP
+

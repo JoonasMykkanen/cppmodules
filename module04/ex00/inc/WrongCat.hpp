@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 12:16:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 13:48:03 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 09:13:21 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat( void );
 		WrongCat( WrongCat const & other );
 		WrongCat& operator=( WrongCat const & other );
-		virtual ~WrongCat( void );
+		~WrongCat( void );
 
 		void	makeSound( void ) const;
 

@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 22:25:32 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 13:31:24 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Cat::Cat( Cat const & other ) {
 Cat& Cat::operator=( Cat const & other ) {
 	std::cout << "Cat equal operator overload called" << std::endl;	
 	if (this != &other) {
+		delete _brain;
 		_brain = new Brain(*other._brain);
 		_index = other._index;
 		_type = other._type;
@@ -47,6 +48,9 @@ void	Cat::makeSound( void ) const {
 void	Cat::think( std::string tought ) {
 	_brain->setIdea(_index, tought);
 	_index++;
+	if (_index == 99 ) {
+		_index = 0;
+	}
 }
 
 void	Cat::speak( void ) {

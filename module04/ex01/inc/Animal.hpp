@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:38 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 22:20:49 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 13:07:52 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ class Animal {
 		Animal( Animal const & other );
 		Animal& operator=( Animal const & other );
 		virtual ~Animal( void );
+		// ~Animal( void ); // TO TEST ERROR WITHOUT VIRTUAL KEYWORD
+		// btw compiler will catch this error, you'll need to remove -Werror flag to turn it to warnings only
 
 		std::string		getType( void ) const;
 		virtual void	makeSound( void ) const;
-
-		virtual void	think( std::string tought ) = 0;
-		virtual void	speak( void ) = 0;
 		
 	protected:
 		std::string	_type;

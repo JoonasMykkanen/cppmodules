@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 22:25:02 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 13:31:20 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog( void ) : AAnimal("Dog") {
 	std::cout << "Dog default constructor called" << std::endl;
 	_brain = new Brain();
+	_index = 0;
 }
 
 Dog::Dog( Dog const & other ) {
@@ -46,6 +47,9 @@ void	Dog::makeSound( void ) const {
 void	Dog::think( std::string tought ) {
 	_brain->setIdea(_index, tought);
 	_index++;
+	if (_index == 99 ) {
+		_index = 0;
+	}
 }
 
 void	Dog::speak( void ) {

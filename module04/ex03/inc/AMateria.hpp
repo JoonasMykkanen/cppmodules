@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 11:52:38 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 09:03:02 by joonasmykka      ###   ########.fr       */
+/*   Created: 2023/09/29 07:30:46 by joonasmykka       #+#    #+#             */
+/*   Updated: 2023/10/01 13:53:11 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_H
-# define WRONGANIMAL_H
+#ifndef AMATERIA_H
+# define AMATERIA_H
 
-# include <iostream>
 # include <string>
+# include <iostream>
+# include "ICharacter.hpp"
 
-class WrongAnimal {
-
+class AMateria {
+	
 	public:
-		WrongAnimal( void );
-		WrongAnimal( std::string type );
-		WrongAnimal( WrongAnimal const & other );
-		WrongAnimal& operator=( WrongAnimal const & other );
-		virtual ~WrongAnimal( void );
+		AMateria( std::string const & type );
+		AMateria( AMateria const & other );
+		AMateria& operator=( AMateria const & other );
+		virtual ~AMateria( void );
 
-		std::string	getType( void ) const;
-		void		makeSound( void ) const;
+		std::string const & getType() const;
+
+		virtual	AMateria* 	clone() const = 0;
+		virtual void		use( ICharacter& target );
 
 	protected:
 		std::string	_type;
 
-	private:
-	
 };
 
-#endif // !WRONGANIMAL_H
+#endif // !AMATERIA_H

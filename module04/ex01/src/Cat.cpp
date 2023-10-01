@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 22:14:25 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/01 13:31:18 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Cat::Cat( void ) : Animal("Cat") {
 	std::cout << "Cat default constructor called" << std::endl;
-	_ideas = new Brain();
+	_brain = new Brain();
 	_index = 0;
 }
 
 Cat::Cat( Cat const & other ) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	_ideas = new Brain(*other._ideas);
+	_brain = new Brain(*other._brain);
 	_index = other._index;
 	_type = other._type;
 }
@@ -28,7 +28,7 @@ Cat::Cat( Cat const & other ) {
 Cat& Cat::operator=( Cat const & other ) {
 	std::cout << "Cat equal operator overload called" << std::endl;	
 	if (this != &other) {
-		_ideas = new Brain(*other._ideas);
+		_brain = new Brain(*other._brain);
 		_index = other._index;
 		_type = other._type;
 	}
@@ -37,7 +37,7 @@ Cat& Cat::operator=( Cat const & other ) {
 
 Cat::~Cat( void ) {
 	std::cout << "Cat destructor called" << std::endl;
-	delete _ideas;
+	delete _brain;
 }
 
 void	Cat::makeSound( void ) const {
@@ -45,10 +45,13 @@ void	Cat::makeSound( void ) const {
 }
 
 void	Cat::think( std::string tought ) {
-	_ideas->setIdea(_index, tought);
+	_brain->setIdea(_index, tought);
 	_index++;
+	if (_index == 99 ) {
+		_index = 0;
+	}
 }
 
 void	Cat::speak( void ) {
-	std::cout << _ideas->getIdea(_index - 1) << std::endl;
+	std::cout << _brain->getIdea(_index - 1) << std::endl;
 }
