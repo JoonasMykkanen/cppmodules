@@ -6,7 +6,7 @@
 #    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/31 11:43:45 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/10/01 12:16:39 by joonasmykka      ###   ########.fr        #
+#    Updated: 2023/10/02 07:32:22 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,12 @@ FLAGS = -std=c++98 -Wall -Werror -Wextra $(INC)
 SRCDIR = src
 OBJDIR = obj
 
-SRCFILES = main.cpp
-
+SRCFILES = main.cpp	
+SRCFILES += AMateria.cpp
+SRCFILES += Character.cpp
+SRCFILES += MateriaSource.cpp
+SRCFILES += Ice.cpp
+SRCFILES += Cure.cpp
 
 SOURCES = $(patsubst %, $(SRCDIR)/%, $(SRCFILES))
 OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCFILES))

@@ -6,18 +6,18 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:30:46 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 13:53:11 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/02 12:29:34 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_H
 # define AMATERIA_H
 
-# include <string>
-# include <iostream>
 # include "ICharacter.hpp"
+# include <iostream>
+# include <string>
 
-class AMateria {
+class	AMateria {
 	
 	public:
 		AMateria( std::string const & type );

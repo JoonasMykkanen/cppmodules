@@ -6,14 +6,17 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:37:36 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 13:39:41 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/02 07:13:37 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_H
 # define ICHARACTER_H
+ 
+#include <string>
 
-# include "AMateria.hpp"
+class AMateria;
+
 
 class ICharacter {
 	public:

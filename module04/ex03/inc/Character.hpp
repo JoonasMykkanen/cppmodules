@@ -6,28 +6,39 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 13:37:41 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 13:42:36 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/02 17:28:04 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_H
 # define CHARACTER_H
 
-# define FULL 4
+# define MAX_INVENTORY 4
 
-# include "AMateria.hpp"
 # include "ICharacter.hpp"
+# include "AMateria.hpp"
 
 class Character : public ICharacter {
 	
 	public:
-		Character();
+		Character( std::string const & name );
 		Character( Character const & other );
 		Character& operator=( Character const & other );
-		~Character();
+		~Character( void );
+
+		std::string const &	getName( void ) const;
+		void				equip( AMateria *m );
+		void				unequip( int idx );
+		void				use( int idx, ICharacter& target );
 
 	private:
-		AMateria*	inventory;
+		Character( void );
+		std::string	_name;
+		int			_index;
+		AMateria*	_inventory[4];
+		
+		AMateria* 	_garbage[1000];
+    	int 		_garbageIndex;
 
 };
 
