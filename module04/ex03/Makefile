@@ -6,7 +6,7 @@
 #    By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/31 11:43:45 by joonasmykka       #+#    #+#              #
-#    Updated: 2023/10/02 07:32:22 by joonasmykka      ###   ########.fr        #
+#    Updated: 2023/10/03 06:45:33 by joonasmykka      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ INC = -I ./inc
 
 CC = c++
 
-FLAGS = -std=c++98 -Wall -Werror -Wextra $(INC)
+FLAGS =  -fsanitize=address -g -Wall -Werror -Wextra -std=c++98  $(INC)
 
 SRCDIR = src
 OBJDIR = obj

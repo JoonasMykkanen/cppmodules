@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:06:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/02 17:30:34 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 06:01:25 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ Cure::Cure( void ) : AMateria("cure") {
 	// std::cout << "Cure default constructor called" << std::endl;
 }
 
-Cure::Cure( Cure const & other ) : AMateria(other) {
+Cure::Cure( Cure const & other ) : AMateria(other._type) {
 	// std::cout << "Cure copy constructor called" << std::endl;
 }
 
 Cure&	Cure::operator=( Cure const & other ) {
 	// std::cout << "Cure equal overload called" << std::endl;
 	if (this != &other) {
-		_type = other.getType();
+		_type = other._type;
 	}
 	return *this;
 }

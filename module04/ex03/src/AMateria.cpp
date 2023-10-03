@@ -6,17 +6,16 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:30:53 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/02 08:39:07 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 06:02:03 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 AMateria::AMateria( std::string const & type ) : _type(type) {
-	// std::cout << "AMateria default constructor called" << std::endl;
+	// std::cout << "AMateria name constructor called" << std::endl;
 }
 
-// TODO OTHER IS NOT CORRECT
 AMateria::AMateria( AMateria const & other ) {
 	// std::cout << "AMateria copy constructor called" << std::endl;
 	_type = other._type;

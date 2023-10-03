@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 07:32:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/02 10:22:02 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 05:13:33 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 MateriaSource::MateriaSource( void ) : _index(0) {
 	// std::cout << "MateriaSource default consturctor called" << std::endl;
 	for (int i = 0; i < FULL_MEMORY; i++) {
-		_memory[i] = nullptr;
+		_memory[i] = NULL;
 	}
 }
 
@@ -25,7 +25,7 @@ MateriaSource::MateriaSource( MateriaSource const & other ) {
 		if (other._memory[i]) {
 			_memory[i] = other._memory[i]->clone();
 		} else {
-			_memory[i] = nullptr;
+			_memory[i] = NULL;
 		}
 	}
 }
@@ -38,7 +38,7 @@ MateriaSource&	MateriaSource::operator=( MateriaSource const & other ) {
             if (other._memory[i]) {
                 _memory[i] = other._memory[i]->clone();
             } else {
-                _memory[i] = nullptr;
+                _memory[i] = NULL;
             }
         }
     }
@@ -65,9 +65,9 @@ void	MateriaSource::learnMateria(AMateria* m) {
 
 AMateria*	MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < FULL_MEMORY; i++) {
-		if (_memory[i] != nullptr && _memory[i]->getType() == type) {
+		if (_memory[i] != NULL && _memory[i]->getType() == type) {
 			return _memory[i]->clone();
 		}
 	}
-	return nullptr;
+	return NULL;
 }

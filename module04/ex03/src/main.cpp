@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:29:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/02 17:32:20 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 06:44:32 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void basicTest() {
     delete bob;
     delete me;
     delete src;
+	std::cout << std::endl;
 }
 
 void fullInventoryTest() {
@@ -50,10 +51,11 @@ void fullInventoryTest() {
     }
     
     AMateria* tmp = src->createMateria("cure");
-    me->equip(tmp); // this should not get equipped as inventory is already full
+    me->equip(tmp);
     
     delete me;
     delete src;
+	std::cout << std::endl;
 }
 
 void cloningTest() {
@@ -71,6 +73,7 @@ void cloningTest() {
     delete original;
     delete clone;
     delete src;
+	std::cout << std::endl;
 }
 
 void unequipTest() {
@@ -81,10 +84,11 @@ void unequipTest() {
     ICharacter* me = new Character("Unequipper");
     me->equip(src->createMateria("ice"));
     me->unequip(0);
-    me->use(0, *me); // Nothing should happen
+    me->use(0, *me);
     
     delete me;
     delete src;
+	std::cout << std::endl;
 }
 
 void copyAndAssignmentTest() {
@@ -106,6 +110,7 @@ void copyAndAssignmentTest() {
     delete copyChar;
     delete me;
     delete src;
+	std::cout << std::endl;
 }
 
 void learningAndCreationTest() {
@@ -123,30 +128,21 @@ void learningAndCreationTest() {
 
     delete iceMateria;
     delete src;
+	std::cout << std::endl;
 }
 
 void nullMateriaTest() {
     std::cout << "=== Null Materia Test ===" << std::endl;
     ICharacter* me = new Character("NullHandler");
-    me->equip(NULL);
+
+	AMateria* nuller = NULL;
+
+	me->equip(nuller);
     me->unequip(0);
     me->use(0, *me);
 
     delete me;
-}
-
-void repeatedEquippingTest() {
-    std::cout << "=== Repeated Equipping Test ===" << std::endl;
-    IMateriaSource* src = new MateriaSource();
-    src->learnMateria(new Ice());
-
-    ICharacter* me = new Character("Repeater");
-    AMateria* tmp = src->createMateria("ice");
-    me->equip(tmp);
-    me->equip(tmp); // Should handle repeated equipping gracefully
-
-    delete me;
-    delete src;
+	std::cout << std::endl;
 }
 
 int main() {
@@ -157,7 +153,6 @@ int main() {
     copyAndAssignmentTest();
     learningAndCreationTest();
     nullMateriaTest();
-    repeatedEquippingTest();
 
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:06:36 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/02 08:32:43 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 06:01:41 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ Ice::Ice( void ) : AMateria("ice") {
 	// std::cout << "Ice default constructor called" << std::endl;
 }
 
-Ice::Ice( Ice const & other ) : AMateria(other) {
-	// std::cout << "Ice copy constructor called" << std::endl;
+Ice::Ice( Ice const & other ) : AMateria(other._type) {
+	// std::cout << "Cure copy constructor called" << std::endl;
 }
 
 Ice&	Ice::operator=( Ice const & other ) {
-	// std::cout << "Ice equal overload called" << std::endl;
+	// std::cout << "Cure equal overload called" << std::endl;
 	if (this != &other) {
-		_type = other.getType();
+		_type = other._type;
 	}
 	return *this;
 }
