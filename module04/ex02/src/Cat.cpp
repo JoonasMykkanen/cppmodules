@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 13:31:24 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 09:33:47 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,9 @@ void	Cat::think( std::string tought ) {
 }
 
 void	Cat::speak( void ) {
-	std::cout << _brain->getIdea(_index - 1) << std::endl;
+	std::string idea = _brain->getIdea(_index - 1);
+	if (idea.length() > 0)
+		std::cout << _brain->getIdea(_index - 1) << std::endl;
+	else
+		std::cout << "* CRICKETS *" << std::endl;
 }

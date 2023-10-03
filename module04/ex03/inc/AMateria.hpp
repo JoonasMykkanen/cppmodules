@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:30:46 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 06:02:10 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 11:37:50 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,18 @@ class	AMateria {
 		virtual ~AMateria( void );
 
 		std::string const & getType() const;
+		bool				getEquipped() const;
+		bool				getCollected() const;
+		void				setEquipped( bool status );
+		void				setCollected( bool status );
 
 		virtual	AMateria* 	clone() const = 0;
 		virtual void		use( ICharacter& target );
 
 	protected:
 		std::string	_type;
+		bool		_equipped;
+		bool		_collected;
 
 };
 

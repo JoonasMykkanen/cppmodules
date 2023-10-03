@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 07:32:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 05:13:33 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 11:38:00 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ MateriaSource::~MateriaSource( void ) {
 	}
 }
 
+// will leak if full
 void	MateriaSource::learnMateria(AMateria* m) {
 	if (!m) return;
 	
@@ -66,7 +67,10 @@ void	MateriaSource::learnMateria(AMateria* m) {
 AMateria*	MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < FULL_MEMORY; i++) {
 		if (_memory[i] != NULL && _memory[i]->getType() == type) {
-			return _memory[i]->clone();
+			AMateria* newMateria = _memory[i]->clone();
+			newMateria->setEquipped(false);
+			newMateria->setCollected(false);
+			return newMateria;
 		}
 	}
 	return NULL;

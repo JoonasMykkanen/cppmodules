@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 05:39:15 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 06:43:02 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 11:37:38 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ std::string const &	Character::getName( void ) const {
 }
 
 void	Character::equip( AMateria *m ) {
-	if (!m) return;
+	if (!m || m->getEquipped()) return;
 	
 	for (int i = 0; i < MAX_INVENTORY; i++) {
 		if (_inventory[i] == m) return;
@@ -76,7 +76,8 @@ void	Character::equip( AMateria *m ) {
 		if (!_inventory[i]) {
 			std::cout << "* " << _name << " equipped new " << m->getType() << " *\n";
 			_inventory[i] = m;
-			break;
+			m->setEquipped(true);
+			return;
 		}
 	}
 }
@@ -84,9 +85,13 @@ void	Character::equip( AMateria *m ) {
 void	Character::unequip( int idx ) {
 	if ((idx >= 0 && idx < MAX_INVENTORY) && _inventory[idx]) {
 		std::cout << "* " << _name << " unequipped their " << _inventory[idx]->getType() << " *\n";
-		_garbage[_garbageIndex] = _inventory[idx];
+		if (!_inventory[idx]->getCollected()) {
+			_inventory[idx]->setCollected(true);
+			_garbage[_garbageIndex] = _inventory[idx];
+			_garbageIndex++;
+		}
+		_inventory[idx]->setEquipped(false);
 		_inventory[idx] = NULL;
-		_garbageIndex++;
 	}
 }
 

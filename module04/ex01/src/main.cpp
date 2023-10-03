@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:51:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 12:18:36 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 09:34:50 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main( void ) {
 	// it would result in a seg fault.
 	std::cout << "Also testing subject's test" << std::endl;
 	Dog	basic;
+	basic.speak();
 	basic.think("First tought");
 	{
 		Dog test1 = basic;
