@@ -6,15 +6,16 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 09:33:24 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/04 10:53:24 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Dog.hpp"
 
-Dog::Dog( void ) : Animal("Dog") {
+Dog::Dog( void ) {
 	std::cout << "Dog default constructor called" << std::endl;
 	_brain = new Brain();
+	_type = "Dog";
 	_index = 0;
 }
 
@@ -28,6 +29,8 @@ Dog::Dog( Dog const & other ) {
 Dog& Dog::operator=( Dog const & other ) {
 	std::cout << "Dog equal operator overload called" << std::endl;	
 	if (this != &other) {
+		if (_brain)
+			delete _brain;
 		_brain = new Brain(*other._brain);
 		_index = other._index;
 		_type = other._type;

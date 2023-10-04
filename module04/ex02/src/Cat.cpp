@@ -6,15 +6,16 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 09:33:47 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/04 11:01:48 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cat.hpp"
 
-Cat::Cat( void ) : AAnimal("Cat") {
+Cat::Cat( void ) {
 	std::cout << "Cat default constructor called" << std::endl;
 	_brain = new Brain();
+	_type = "cat";
 	_index = 0;
 }
 
@@ -28,7 +29,8 @@ Cat::Cat( Cat const & other ) {
 Cat& Cat::operator=( Cat const & other ) {
 	std::cout << "Cat equal operator overload called" << std::endl;	
 	if (this != &other) {
-		delete _brain;
+		if (_brain)
+			delete _brain;
 		_brain = new Brain(*other._brain);
 		_index = other._index;
 		_type = other._type;

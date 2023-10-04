@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:51:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 09:34:50 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/04 11:00:46 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,18 @@ int	main( void ) {
 	Animal*	villeveikko = new Dog;
 	delete villeveikko;
 	std::cout << std::endl;
+
+	// Testing copy assigment operators proper work
+	std::cout << std::endl;
+	Cat* nipper = new Cat;
+	Cat dipper;
+	std::cout << std::endl;
+	
+	nipper->think("Think");
+	nipper->speak();
+	dipper = *nipper;
+	delete nipper;
+	dipper.speak();
 	
 	return 0;
 }

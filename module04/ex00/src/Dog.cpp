@@ -6,14 +6,15 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:52:09 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/20 13:54:13 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/04 10:54:11 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog( void ) : Animal("Dog") {
+Dog::Dog( void ) {
 	std::cout << "Dog default constructor called" << std::endl;
+	_type = "Dog";
 }
 
 Dog::Dog( Dog const & other ) {

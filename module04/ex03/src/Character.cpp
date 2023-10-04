@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 05:39:15 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 11:37:38 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/04 10:57:11 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ Character&	Character::operator=( Character const & other ) {
 	if (this != &other) {
 		_name = other._name;
 		for (int i = 0; i < MAX_INVENTORY; i++) {
-			delete _inventory[i];
+			if (_inventory[i])
+				delete _inventory[i];
 			if (other._inventory[i]) {
 				_inventory[i] = other._inventory[i]->clone();
 			} else {

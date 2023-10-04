@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:51:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/01 13:32:05 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/04 11:01:07 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,17 @@ int	main( void ) {
 		c = b;
 	}
 	c.speak();
+
+	std::cout << std::endl;
+	Cat* nipper = new Cat;
+	Cat dipper;
+	std::cout << std::endl;
+	
+	nipper->think("Think");
+	nipper->speak();
+	dipper = *nipper;
+	delete nipper;
+	dipper.speak();
 
 	return 0;
 }

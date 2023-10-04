@@ -6,7 +6,7 @@
 /*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 07:32:29 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 11:38:00 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/04 10:57:42 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ MateriaSource&	MateriaSource::operator=( MateriaSource const & other ) {
 	// std::cout << "MateriaSource equal overload called" << std::endl;
 	if (this != &other) {
         for (int i = 0; i < FULL_MEMORY; ++i) {
-            delete _memory[i];
+			if (_memory[i])
+            	delete _memory[i];
             if (other._memory[i]) {
                 _memory[i] = other._memory[i]->clone();
             } else {
