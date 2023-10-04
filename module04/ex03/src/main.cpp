@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:29:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 11:34:52 by joonasmykka      ###   ########.fr       */
+/*   Updated: 2023/10/03 11:44:26 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,15 @@ void fullInventoryTest() {
         me->equip(tmp);
     }
     
+	// Cannot be equipped anymore
     AMateria* tmp = src->createMateria("cure");
     me->equip(tmp);
 
+	// Making room for one more
 	me->unequip(0);
 	me->equip(tmp);
 
+	// Empty inventory to prove garbage collection.
 	for(int i=0; i<4; i++) { me->unequip(i); }
     
     delete me;
@@ -89,6 +92,7 @@ void unequipTest() {
     ICharacter* me = new Character("Unequipper");
     me->equip(src->createMateria("ice"));
     me->unequip(0);
+	// Cannot use anymore since unequipped
     me->use(0, *me);
     
     delete me;
@@ -143,6 +147,7 @@ void nullMateriaTest() {
 
 	AMateria* nuller = NULL;
 
+	// Nothing works since invalid materia given
 	me->equip(nuller);
     me->unequip(0);
     me->use(0, *me);
