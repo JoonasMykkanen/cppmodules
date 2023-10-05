@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joonasmykkanen <joonasmykkanen@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:29:37 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/10/03 11:44:26 by jmykkane         ###   ########.fr       */
+/*   Updated: 2023/10/05 09:01:36 by joonasmykka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void fullInventoryTest() {
         AMateria* tmp = src->createMateria("ice");
         me->equip(tmp);
     }
+
+	std::cout << "\n INVERTORY NOW FULL \n";
     
 	// Cannot be equipped anymore
     AMateria* tmp = src->createMateria("cure");
@@ -66,24 +68,6 @@ void fullInventoryTest() {
 	std::cout << std::endl;
 }
 
-void cloningTest() {
-    std::cout << "=== Cloning Test ===" << std::endl;
-    IMateriaSource* src = new MateriaSource();
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
-
-    AMateria* original = src->createMateria("ice");
-    AMateria* clone = original->clone();
-    
-    std::cout << "Original Type: " << original->getType() << std::endl;
-    std::cout << "Clone Type: " << clone->getType() << std::endl;
-    
-    delete original;
-    delete clone;
-    delete src;
-	std::cout << std::endl;
-}
-
 void unequipTest() {
     std::cout << "=== Unequip Test ===" << std::endl;
     IMateriaSource* src = new MateriaSource();
@@ -94,7 +78,7 @@ void unequipTest() {
     me->unequip(0);
 	// Cannot use anymore since unequipped
     me->use(0, *me);
-    
+
     delete me;
     delete src;
 	std::cout << std::endl;
@@ -117,26 +101,7 @@ void copyAndAssignmentTest() {
 
     delete assignedChar;
     delete copyChar;
-    delete me;
-    delete src;
-	std::cout << std::endl;
-}
-
-// Here are no Character present so materia needs to be delted
-void learningAndCreationTest() {
-    std::cout << "=== Learning and Creation Test ===" << std::endl;
-    IMateriaSource* src = new MateriaSource();
-    src->learnMateria(new Ice());
-
-    AMateria* iceMateria = src->createMateria("ice");
-    std::cout << "Created Materia Type: " << iceMateria->getType() << std::endl;
-
-    AMateria* unknownMateria = src->createMateria("fire");
-    if (!unknownMateria) {
-        std::cout << "Materia 'fire' is unknown" << std::endl;
-    }
-
-    delete iceMateria;
+	delete me;
     delete src;
 	std::cout << std::endl;
 }
@@ -187,11 +152,9 @@ void	reEquipTest() {
 int main() {
 	
     basicTest();
-    cloningTest();
     fullInventoryTest();
     unequipTest();
     copyAndAssignmentTest();
-    learningAndCreationTest();
     nullMateriaTest();
 	reEquipTest();
 
