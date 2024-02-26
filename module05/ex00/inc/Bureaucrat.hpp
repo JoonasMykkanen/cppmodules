@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 07:31:02 by joonasmykka       #+#    #+#             */
-/*   Updated: 2024/02/08 11:04:21 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:14:27 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class Bureaucrat {
 
 	private:
 		std::string	const	_name;
-		int		_grade;
+		int					_grade;
 };
 
 std::ostream& operator<<( std::ostream& os, Bureaucrat const & obj );

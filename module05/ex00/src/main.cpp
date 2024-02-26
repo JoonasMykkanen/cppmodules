@@ -6,14 +6,13 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 07:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2024/02/08 11:04:06 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:18:14 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
 
 int	main( void ) {
-
 	// Catch with general std::exception
 	std::cout << "RUNNING: Bureacrat kalevi('kalevi', 100)\n";
 	std::cout << "Expecting no errors. \n";
@@ -69,8 +68,9 @@ int	main( void ) {
 	// Bureaucrat kalevi("kalevi", 200);
 	// Bureaucrat kalevi("kalevi", -200);
 	// but not with correct one
+	std::cout << "Next test will need modification of main.cpp" << std::endl;
 	Bureaucrat correctOne("correctOne", 100);
-	std::cout << correctOne;
+	// std::cout << correctOne;
 
 	return 0;
 }
