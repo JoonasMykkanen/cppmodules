@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:57:30 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/02/19 07:49:49 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/02/27 10:49:22 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ AForm*	Intern::makeForm( std::string const formName, std::string const targetNam
 	for (int i = 0; i < 3; i++) {
 		if (formName == forms[i]) {
 			newForm = (this->*formFunctions[i])(targetName);
-			std::cout << "Intern creates " << targetName << std::endl;
+			std::cout << "Intern creates " << formName << std::endl;
 			return newForm;
 		}
 	}

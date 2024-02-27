@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 07:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2024/02/19 07:52:28 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/02/27 10:49:06 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main( void ) {
 	Bureaucrat JustPromotedFromInter("Pekka Pouta", 150);
 	Bureaucrat OldSchooler("Alias Von HaffelHof", 1);
 	Intern SummerInter;
-	AForm* form;
+	AForm* form = nullptr;
 	
 	form = SummerInter.makeForm("RobotomyRequestForm", "Bender");
 	form->beSigned(OldSchooler);
