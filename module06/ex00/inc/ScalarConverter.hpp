@@ -6,22 +6,23 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 08:52:47 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/02/19 19:56:29 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/02/27 23:17:21 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALAR_HPP
 # define SCALAR_HPP
 
-# include <limits.h>
+# include <limits>
 # include <iostream>
 # include <float.h>
 # include <iomanip>
 # include <string>
 
-# define IMPOSSIBLE 0
-# define POSSIBLE 1
-# define PSEUDO 3
+# define _IMPOSSIBLE 0
+# define _POSSIBLE 1
+# define _INF 3
+# define _NAN 4
 
 class ScalarConverter {
 
@@ -36,6 +37,7 @@ class ScalarConverter {
 
 		// ----------  convert() helper functions ---------- //
 		static void	performCasting( std::string const & input );
+		static void	checkLimits( std::string const & input );
 		static void	chooseType( std::string const & input );
 		static void	printOutput( void );
 
@@ -60,18 +62,16 @@ class ScalarConverter {
 		static int		_type;
 		static bool		_negative;
 		static bool		_printing;
-		static int		_precision;
-
 
 		enum	eTypes {
-			ErrorType,
-			NoneType,
 			CharType,
 			IntType,
 			FltType,
-			DblType
+			DblType,
+			ErrorType,
+			NoneType
 		};
-		
+			
 };
 
 #endif // !SCALAR_HPP

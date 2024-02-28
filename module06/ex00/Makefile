@@ -6,11 +6,11 @@
 #    By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 07:29:07 by joonasmykka       #+#    #+#              #
-#    Updated: 2024/02/19 14:54:56 by jmykkane         ###   ########.fr        #
+#    Updated: 2024/02/27 11:59:13 by jmykkane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = convert
 
 INC = -I ./inc
 
