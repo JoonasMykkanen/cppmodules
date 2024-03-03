@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 10:30:36 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/02/28 21:09:54 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/03 15:14:23 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,7 @@ void	ScalarConverter::convertDouble( std::string const & input ) {
 	try {
 		if (_dblStatus == _INF) {
 			if (_negative)
-				_dblStatus = -std::numeric_limits<double>::infinity();
+				_dblValue = -std::numeric_limits<double>::infinity();
 			else
 				_dblValue = std::numeric_limits<double>::infinity();
 		}
@@ -250,7 +250,7 @@ void	ScalarConverter::checkLimits( std::string const & input ) {
 			}
 		}
 		if (bigNumber < std::numeric_limits<double>::lowest() || bigNumber > std::numeric_limits<double>::max()) {
-			if (_fltStatus != _INF && _fltStatus != _NAN) {
+			if (_dblStatus != _INF && _dblStatus != _NAN) {
 				_dblStatus = _IMPOSSIBLE;
 				if (_type == DblType)
 					_printing = false;
@@ -265,6 +265,7 @@ void	ScalarConverter::checkLimits( std::string const & input ) {
 	}
 	catch ( std::exception& e ) {
 		std::cerr << "Could not check limits: " << e.what() << std::endl;
+		_printing = false;
 	}
 }
 
@@ -289,8 +290,9 @@ void ScalarConverter::printOutput( void ) {
 	std::cout << "float: ";
 	if (_fltStatus == _POSSIBLE)
 		std::cout << std::fixed << std::setprecision(2) << _fltValue << "f" << std::endl;
-	else if (_fltStatus == _INF || _fltStatus == _NAN)
+	else if (_fltStatus == _INF || _fltStatus == _NAN) {
 		std::cout  << _fltValue << 'f' << std::endl;
+	}
 	else
 		std::cout << "impossible" << std::endl;
 
