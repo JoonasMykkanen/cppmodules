@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 07:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2024/02/27 10:49:06 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/11 14:24:37 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,32 @@ int	main( void ) {
 	}
 	if (form != nullptr)
 		delete form;
+
+	form = SummerInter.makeForm("PresidentalPardonForm", "Criminal");
+	form->beSigned(OldSchooler);
+	form->execute(OldSchooler);
 	
+	try {
+		form->execute(JustPromotedFromInter);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+	if (form != nullptr)
+		delete form;
+	
+	form = SummerInter.makeForm("ShrubberyCreationForm", "Home");
+	form->beSigned(OldSchooler);
+	form->execute(OldSchooler);
+	
+	try {
+		form->execute(JustPromotedFromInter);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+	if (form != nullptr)
+		delete form;
 
 	
 	AForm* invalidForm;

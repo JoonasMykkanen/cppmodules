@@ -6,10 +6,11 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 07:38:18 by joonasmykka       #+#    #+#             */
-/*   Updated: 2024/02/26 23:00:19 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/11 13:37:11 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../inc/AForm.hpp"
 #include "../inc/Bureaucrat.hpp"
 #include "../inc/RobotomyRequestForm.hpp"
 #include "../inc/PresidentalPardonForm.hpp"

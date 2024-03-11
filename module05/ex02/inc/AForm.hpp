@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:15:08 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/02/26 22:48:44 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/11 13:36:28 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class AForm
 		AForm ( const std::string name, const int signGrade, const int execGrade);
 		AForm( AForm const & other );
 		AForm& operator=( AForm const & other );
-		~AForm( void );
+		virtual ~AForm( void ) = 0;
 
 		// Getters
 		std::string const &	getName( void ) const;
