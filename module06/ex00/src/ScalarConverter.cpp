@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 10:30:36 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/12 13:41:41 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/12 13:45:23 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ScalarConverter::chooseType( std::string const & input ) {
 	if (input.empty()) {
 		_type = ErrorType;
 	}
-	else if (!input.compare("-inff") || !input.compare("+inff")) {
+	else if (!input.compare("-inff") || !input.compare("+inff") || !input.compare("inff")) {
 		if (input[0] == '-')
 			_negative = true;
 		_type = FltType;
@@ -55,7 +55,7 @@ void	ScalarConverter::chooseType( std::string const & input ) {
 		_fltStatus = _INF;
 		_dblStatus = _INF;
 	}
-	else if (!input.compare("-inf") || !input.compare("+inf")) {
+	else if (!input.compare("-inf") || !input.compare("+inf") || !input.compare("inf")) {
 		if (input[0] == '-')
 			_negative = true;
 		_type = DblType;
