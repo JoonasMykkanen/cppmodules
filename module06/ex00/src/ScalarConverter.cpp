@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 10:30:36 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/03 15:14:23 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/12 13:41:41 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	ScalarConverter::chooseType( std::string const & input ) {
 		_fltStatus = _POSSIBLE;
 		_dblStatus = _POSSIBLE;
 	}
-	else if (input.find_first_not_of("0123456789") == std::string::npos) {
+	else if (input.find_first_not_of("-+0123456789") == std::string::npos) {
 		for (size_t i = 0; i < input.size(); i++) {
 			char c = input[i];
 			
@@ -98,8 +98,10 @@ void	ScalarConverter::chooseType( std::string const & input ) {
 				_negative = true;
 				continue;
 			}
+			if (i == 0 && c == '+')
+				continue;
 			
-			if (!isdigit(c))
+			if (!isdigit(c) || (input.size() > 1 && c == '0'))
 			{
 				_type = ErrorType;
 				return;
@@ -234,6 +236,13 @@ void ScalarConverter::performCasting( std::string const & input ) {
 }
 
 void	ScalarConverter::checkLimits( std::string const & input ) {
+	if (_type == CharType) {
+		int	c = input[0];
+		if (c < 0 || c > 127)
+			_charStatus = _IMPOSSIBLE;
+		return;
+	}
+	
 	try {
 		long double bigNumber = std::stold(input);
 
@@ -256,15 +265,12 @@ void	ScalarConverter::checkLimits( std::string const & input ) {
 					_printing = false;
 			}
 		}
-		if (bigNumber < 0 || bigNumber > 127)
-			_charStatus = _IMPOSSIBLE;
 		
 		std::string types[] = {"char", "int", "float", "double"};
 		if (!_printing)
 			std::cout << "Could not convert to <" << types[_type] << ">" << std::endl;
 	}
 	catch ( std::exception& e ) {
-		std::cerr << "Could not check limits: " << e.what() << std::endl;
 		_printing = false;
 	}
 }

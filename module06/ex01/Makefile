@@ -6,11 +6,11 @@
 #    By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 07:29:07 by joonasmykka       #+#    #+#              #
-#    Updated: 2024/03/03 15:33:10 by jmykkane         ###   ########.fr        #
+#    Updated: 2024/03/03 19:39:54 by jmykkane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Serializer
+NAME = serializer
 
 INC = -I ./inc
 

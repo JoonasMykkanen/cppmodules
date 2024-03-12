@@ -6,11 +6,11 @@
 #    By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 07:29:07 by joonasmykka       #+#    #+#              #
-#    Updated: 2024/03/03 17:08:48 by jmykkane         ###   ########.fr        #
+#    Updated: 2024/03/03 19:39:49 by jmykkane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  RealType
+NAME =  realtype
 
 INC = -I ./inc
 
