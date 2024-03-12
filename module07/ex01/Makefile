@@ -6,11 +6,11 @@
 #    By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 07:29:07 by joonasmykka       #+#    #+#              #
-#    Updated: 2024/03/03 19:39:41 by jmykkane         ###   ########.fr        #
+#    Updated: 2024/03/04 11:46:55 by jmykkane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = templates
+NAME = iter
 
 INC = -I ./inc
 
