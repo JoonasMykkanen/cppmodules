@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 09:28:57 by joonasmykka       #+#    #+#             */
-/*   Updated: 2023/09/18 10:17:59 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:40:48 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ Zombie::~Zombie( void ) {
 }
 
 void	Zombie::announce( void ) {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl; 
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
