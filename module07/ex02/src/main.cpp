@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 18:37:47 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/14 13:23:00 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:54:33 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Array.hpp"
 #include <iostream>
 #include <string>
+
+int test(int, char**);
 
 int	main( void ) {
 	try {
@@ -108,5 +110,7 @@ int	main( void ) {
 		// arr2[0] = 0;
 	}
 	catch (std::exception& e) { std::cout << "catch: " << e.what() << std::endl; }
+
+	
 
 }

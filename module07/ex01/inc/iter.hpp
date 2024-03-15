@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 18:37:31 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/13 10:06:51 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:45:31 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <cstddef>
 
 template <typename Type>
-void	iter(Type* arr, size_t len, void (*fn)(Type)) {
+void	iter(Type* arr, size_t len, void (*fn)(Type const &)) {
 	for (size_t i = 0; i < len; i++) {
 		fn(arr[i]);
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 18:37:31 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/03 18:59:04 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:30:53 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	swap(Type& first, Type& second) {
 }
 
 template <typename Type>
-const Type&	min(Type const& first, Type const& second) {
+const Type&	min(Type const & first, Type const & second) {
 	return first < second ? first : second;
 }
 
