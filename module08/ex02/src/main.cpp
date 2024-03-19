@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:39:47 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/19 11:11:48 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:32:46 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int main( void ) {
 		mstack.push(3);
 		mstack.push(5);
 		mstack.push(737);
-		//[...]
 		mstack.push(0);
 
 		MutantStack<int>::iterator it = mstack.begin();
@@ -63,7 +62,6 @@ int main( void ) {
 		list.push_back(3);
 		list.push_back(5);
 		list.push_back(737);
-		//[...]
 		list.push_back(0);
 
 		std::list<int>::iterator it = list.begin();
