@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:41:51 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/14 19:12:53 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/19 10:54:12 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,18 @@ Span::Span( void ) : _maxSize(0), _isSorted(false) {}
 
 Span::Span( unsigned int n ) : _maxSize(n), _isSorted(false) {}
 
-// Span::Span( Span const & other ) {
-	
-// }
+Span::Span( Span const & other ) {
+	*this = other;
+}
 
-// Span& Span::operator=( Span const & other ) {
-	
-// }
+Span& Span::operator=( Span const & other ) {
+	if (this != &other) {
+		_vec = other._vec;
+		_maxSize = other._maxSize;
+		_isSorted = other._isSorted;
+	}
+	return *this;
+}
 
 Span::~Span( void ) {}
 

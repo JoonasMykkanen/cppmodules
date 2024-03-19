@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:34:23 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/14 22:52:23 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/19 10:58:39 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define MUTANT_HPP
 
 # include <stack>
-// # include <iterator>
+# include <iterator>
+# include <iostream>
 
 template <class Type>
 class MutantStack : public std::stack<Type> {

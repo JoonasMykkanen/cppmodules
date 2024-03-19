@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: jmykkane <jmykkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:39:47 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/14 23:00:43 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:11:48 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,33 @@ int main( void ) {
 			std::cout << *it << std::endl;
 			++it;
 		}
+	}
+
+	{
+		MutantStack<char> stackerson;
+
+		stackerson.push('l');
+		stackerson.push('a');
+		stackerson.push('u');
+		stackerson.push('k');
+		stackerson.push('c');
+		stackerson.push('b');
+
+		std::cout << "before using sort" << std::endl;
+		for (auto it = stackerson.begin(); it != stackerson.end(); ++it) {
+			std::cout << " " << *it << " " << std::endl;
+		}
+		std::cout << std::endl;
+
+		std::cout << "std::sort(stackerson.begin(), stackerson.end());" << std::endl;
+		std::sort(stackerson.begin(), stackerson.end());
+		std::cout << std::endl;
+		
+		std::cout << "after using sort" << std::endl;
+		for (auto it = stackerson.begin(); it != stackerson.end(); ++it) {
+			std::cout << " " << *it << " " << std::endl;
+		}
+		std::cout << std::endl;
 	}
 
 
