@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 13:27:45 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/21 09:17:06 by jmykkane         ###   ########.fr       */
+/*   Created: 2024/03/29 08:44:49 by jmykkane          #+#    #+#             */
+/*   Updated: 2024/03/29 13:41:35 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#include "BitcoinExchange.hpp"
 
-# include <algorithm>
-# include <exception>
+int	main( int argc, char **argv) {
+	if (argc != 2) {
+		std::cout << "Invalid number of arguments, expected [input_file]" << std::endl;
+		return 1;
+	}
 
-template <typename Type>
-typename Type::iterator	easyfind(Type haystack, int needle) {
-	typename Type::iterator it = std::find(haystack.begin(), haystack.end(), needle);
+	(void)argv;
+	try {
+		BitcoinExchange	btc;
+		btc.loadInputFile(argv[1]);
+	}
+	catch(std::exception& error) {
+		std::cerr << error.what() << std::endl;
+		return 1;
+	}
 
-	if (it == haystack.end())
-		throw std::out_of_range("Easyfind: Needle not found in haystack");
-	
-	return it;
+	return 0;
 }
-
-#endif // !EASYFIND_HPP
