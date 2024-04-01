@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 06:58:10 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/31 16:39:26 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/04/01 06:24:41 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ int main( int argc, char **argv ) {
 		return 1;
 	}
 	
-	std::cout << "arg: " << argv[1] << std::endl;
-	RPN::compute(argv[1]);
+	try {
+		RPN::compute(argv[1]);
+	}
+	catch (std::exception& error) {
+		std::cerr << error.what() << std::endl;
+	}
 
 	return 0;
 }

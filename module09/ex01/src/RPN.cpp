@@ -1,8 +1,6 @@
 #include "RPN.hpp"
 
-std::stack<char>	RPN::_operators;
-std::stack<int>		RPN::_operands;
-int					RPN::_result = 0;
+std::stack<int>	RPN::_nums;
 
 RPN::RPN() {}
 
@@ -19,97 +17,60 @@ RPN& RPN::operator=( RPN const & other ) {
 
 RPN::~RPN() {}
 
-bool RPN::checkOperator( char c ) {
-	switch (c) {
-		case '+':
-			return true;
-		case '-':
-			return true;
-		case '/':
-			return true;
-		case '*':
-			return true;
-		default:
-			return false;
-	}
-}
-
 bool RPN::checkOperand( char c ) {
 	if (c >= 48 && c <= 57)
 		return true;
 	return false;
 }
 
-void RPN::processInput( std::string const & input ) {
-	for (int_least32_t i = input.size() - 1; i >= 0; i--) {
-		std::cout << "index: " << i << " arg: " <<input[i] << std::endl;
-		if (input[i] == 32) {
-			continue;
-		}
-		else if (checkOperator(input[i])) {
-			_operators.push(input[i]);
-			continue;
-		}
-		else if (checkOperand(input[i])) {
-			_operands.push(input[i] - '0');
-			continue;
-		}
-		else {
-			throw std::out_of_range("Error: invalid argument found");
-		}
-	}
+int RPN::getNextNumber( void ) {
+	int num = _nums.top();
+	_nums.pop();
+	return num;
 }
 
-char RPN::getNextOperator( void ) {
-	char ret = _operators.top();
-	_operators.pop();
-	return ret;
-}
-
-int	RPN::getNextOperand( void ) {
-	int ret = _operands.top();
-	_operands.pop();
-	return ret;
-}
-
-void RPN::doMathStuff( void ) {
-	if (_operands.size() == 1 && _operators.size() == 0) {
-		_result = _operands.top();
-		return;
-	}
-	else if (_operators.size() < 1 || _operands.size() < 2) {
-		throw std::runtime_error("Error: invalid amount of arguments");
-	}
-
-	int second = getNextOperand();
-	int first = getNextOperand();
-	char op = getNextOperator();
-
-	switch (op) {
-		case '+':
-			_operands.push(first + second);
-			break;
-		case '-':
-			_operands.push(first - second);
-			break;
-		case '/':
-			_operands.push(first / second);
-			break;
-		case '*':
-			_operands.push(first * second);
-			break;
-		default:
-			throw std::runtime_error("Error!");
-	}
-
-	doMathStuff();
-}
+void	RPN::addition( int first, int second ) { _nums.push(first + second); }
+void	RPN::substact( int first, int second ) { _nums.push(first - second); }
+void	RPN::multiply( int first, int second ) { _nums.push(first * second); }
+void	RPN::division( int first, int second ) { _nums.push(first / second); }
 
 void RPN::compute( std::string const & input ) {
-	try {
-		processInput(input);
-		doMathStuff();
-		std::cout << _result << std::endl;
+	for (size_t i = 0; i < input.size(); i++) {
+		if (input[i] == 32)
+			continue;
+		
+		if (checkOperand(input[i])) {
+			_nums.push(input[i] - '0');
+			continue;
+		}
+
+		if (_nums.size() < 2)
+			throw std::runtime_error("Error: not enough operands");
+
+		int second = getNextNumber();
+		int first = getNextNumber();
+		switch (input[i]) {
+			case '+':
+				addition(first, second);
+				break;
+			case '-':
+				substact(first, second);
+				break;
+			case '*':
+				multiply(first, second);
+				break;
+			case '/':
+				division(first, second);
+				break;
+			default:
+				throw std::runtime_error("Error: unknown operator");
+		}
 	}
-	catch (std::exception& error) { std::cerr << error.what() << std::endl; }
+
+	if (_nums.size() == 1) {
+		std::cout << _nums.top() << std::endl;
+	}
+	else {
+		std::cerr << "Error: invalid number of operands left (" << _nums.size() << ") expected (1)" << std::endl;
+	}
 }
