@@ -4,14 +4,10 @@ std::stack<int>	RPN::_nums;
 
 RPN::RPN() {}
 
-RPN::RPN( RPN const & other ) {
-	(void)other;
-}
+RPN::RPN( RPN const & other ) { (void)other; }
 
 RPN& RPN::operator=( RPN const & other ) {
-	if (this != &other) {
-
-	}
+	(void)other;
 	return *this;
 }
 
