@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 08:44:49 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/29 13:41:35 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/04/05 07:58:03 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main( int argc, char **argv) {
 		return 1;
 	}
 
-	(void)argv;
 	try {
 		BitcoinExchange	btc;
 		btc.loadInputFile(argv[1]);

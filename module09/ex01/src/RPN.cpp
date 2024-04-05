@@ -19,6 +19,12 @@ bool RPN::checkOperand( char c ) {
 	return false;
 }
 
+bool RPN::checkOperator( char c ) {
+	if (c == 42 || c == 43 || c == 45 || c == 47)
+		return true;
+	return false;
+}
+
 int RPN::getNextNumber( void ) {
 	int num = _nums.top();
 	_nums.pop();
@@ -38,6 +44,9 @@ void RPN::compute( std::string const & input ) {
 		if (checkOperand(input[i])) {
 			_nums.push(input[i] - '0');
 			continue;
+		}
+		else if (!checkOperator(input[i])) {
+			throw std::runtime_error("Error: unknown character");
 		}
 
 		if (_nums.size() < 2)

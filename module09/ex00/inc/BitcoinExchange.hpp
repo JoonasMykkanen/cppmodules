@@ -6,7 +6,7 @@
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 08:45:25 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/03/29 13:24:29 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/04/05 07:59:07 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ class BitcoinExchange
 		BitcoinExchange& operator=( BitcoinExchange const & other);
 		~BitcoinExchange();
 
-		void	loadDatabase();
 		void	loadInputFile( std::string const & inputFile );	
 
 	private:
 		float	getRateForDate( std::string const & date );
+		void	loadDatabase();
 		
 		std::map<std::string, std::string>	_data;
 		static const std::string			_file;

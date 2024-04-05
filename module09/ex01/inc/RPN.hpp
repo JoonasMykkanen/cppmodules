@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.HPP                                            :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 06:58:29 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/04/01 06:54:00 by jmykkane         ###   ########.fr       */
+/*   Updated: 2024/04/05 08:04:28 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class RPN {
 
 		static int	getNextNumber( void );
 		static bool checkOperand( char c );
+		static bool checkOperator( char c );
 
 		static std::stack<int>	_nums;
 		
