@@ -6,7 +6,7 @@
 #    By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 07:29:07 by joonasmykka       #+#    #+#              #
-#    Updated: 2024/04/01 07:03:20 by jmykkane         ###   ########.fr        #
+#    Updated: 2024/04/10 15:09:42 by jmykkane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,16 @@ FLAGS = -std=c++17 -Wall -Werror -Wextra $(INC)
 
 SRCDIR = src
 OBJDIR = obj
+INCDIR = inc
 
-SRCFILES = main.cpp PmergeMe.cpp
+HEADERFILES = $(SRCDIR)/PmergeMe.tpp $(INCDIR)/PmergeMe.hpp
+SRCFILES = main.cpp 
 
 SOURCES = $(patsubst %, $(SRCDIR)/%, $(SRCFILES))
 OBJECTS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCFILES))
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(HEADERFILES)
 	mkdir -p $(OBJDIR)
 	$(CC) $(FLAGS) -c $< -o $@
 	

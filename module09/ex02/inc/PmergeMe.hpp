@@ -5,53 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 15:57:40 by asarikha          #+#    #+#             */
-/*   Updated: 2024/04/05 07:50:28 by jmykkane         ###   ########.fr       */
+/*   Created: 2024/03/20 21:33:34 by jmykkane          #+#    #+#             */
+/*   Updated: 2024/04/11 10:03:41 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PMERGEME_HPP
-#define PMERGEME_HPP
+# define PMERGEME_HPP
 
-#include <iostream>
-#include <sstream>
-#include <vector>
-#include <list>
+# include <iostream>
+# include <iomanip>
+# include <vector>
+# include <limits>
+# include <deque>
 
-# define MICROSECOND 100000
-# define PRINT_PRECISION 5
+# define LIMIT_PRINTING 1
+# define EMPTY -1
 
-class PmergeMe
-{		
+typedef std::chrono::high_resolution_clock chrono;
+typedef std::pair<int, int>		intpair;
+typedef std::vector<intpair>	pairvect;
+typedef std::deque<intpair>		pairdeque;
+
+
+template <typename Type, typename Pair>
+class PmergeMe {
 	public:
-		PmergeMe( void );
-		PmergeMe( const PmergeMe& other );
-		PmergeMe &operator=( const PmergeMe& other );
-		~PmergeMe(void);
+		PmergeMe( int size, char** numbers );
+		~PmergeMe();
 
-		void printArg( int argc, char **argv, std::string type );
-		void sortVector( int argc, char **argv );
-		void sortList( int argc, char **argv );
+		void	printOriginal();
+		void	printSorted();
+		bool	checkSorted();
+		void	timeDiff();
+		void	sort();
 
 	private:
-		std::vector<unsigned int> 	_veccerson;
-		std::list<unsigned int>		_listerson;
+		PmergeMe();
+		PmergeMe( PmergeMe<Type, Pair> const & other );
+		PmergeMe<Type, Pair> &operator=( PmergeMe<Type, Pair> const & other );
+		
+		void	_createPairs ( char** numbers );
+		size_t	_binarySearch( int needle );
+		void	_insertSort( size_t n );
+		size_t	_jacobsthal( size_t n );
+		void	_startUpSorted();
+		void	_megeSmall();
+		void	_sortPairs();
 
-		// Vector functions
-		void mergeVector(int start , int mid, int end);
-		void insertionSortVec(int start, int end );
-		void mergeInsertVec(int start, int end );
-		void printVector( void );
+		Pair	_pairs;		// Pairs
+		Type	_sorted;	// S array
+		char**	_arg;		// X values
+		size_t	_amount;	// X size
 
-		// List functions
-		void mergeList(int start , int mid, int end);
-		void insertionSortList(int start, int end );
-		void mergeInsertList(int start, int end );
-		void printList( void );
+		chrono::time_point 	_startTime;
+		chrono::time_point	_endTime;
 
 };
 
-
-
+# include "../src/PmergeMe.tpp"
 
 #endif

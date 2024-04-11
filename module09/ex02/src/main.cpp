@@ -5,45 +5,71 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmykkane <jmykkane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 07:04:59 by jmykkane          #+#    #+#             */
-/*   Updated: 2024/04/05 07:46:20 by jmykkane         ###   ########.fr       */
+/*   Created: 2024/03/20 21:34:34 by jmykkane          #+#    #+#             */
+/*   Updated: 2024/04/11 10:01:04 by jmykkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-#include <limits>
 
-int main( int argc, char** argv ) {
-	if (argc == 1) {
-		return 0;
+bool	error( std::string message ) {
+	std::cerr << "Error: " << message << std::endl;
+	return (true);
+}
+
+bool	not_valid_num(std::string str)
+{
+	if (str.empty()) {
+		return error("non-numeric character.");
+	}
+
+	if (str.at(0) == '-') {
+		return error("only positive numbers.");
+	}
+
+	for (size_t i = 0; i != str.size(); i++) {
+		if (!isdigit(str.at(i)))
+			return error("non-numeric character.");
 	}
 
 	try {
-		std::vector<unsigned int>	tester;
-		for (int i = 1; i < argc; i++) {
-			if (std::string(argv[i]).find_first_not_of("0123456789") != std::string::npos) {
-				throw std::invalid_argument("Error: only positive ingegers allowed!");
-			}
-			unsigned long value = std::stoul(argv[i]);
-			if (value > INT_MAX)
-				throw std::invalid_argument("Error: value too big!");
-		}
+		size_t num = std::stoul(str);
+		if (num > INT_MAX || num < 0)
+			return error("Out of range for integers.");
 	}
-	catch (std::exception& error) {
-		std::cerr << error.what() << std::endl;
-		return 1;
+	catch(std::exception& e) {
+		return error("Invalid int");
 	}
+	
+	return (false);
+}
 
-	{
-		PmergeMe	sorter;
-		sorter.sortList(argc, argv);
-		
+bool	validate_input(char** argv) {
+	for (size_t i = 0; argv[i]; i++) {
+		if (not_valid_num(argv[i]))
+			return (true);
 	}
-	std::cout << std::endl;	
-	{
-		PmergeMe	sorter;
-		sorter.sortVector(argc, argv);
+	
+	return (false);
+}
+
+int main(int argc, char **argv) {
+	if (argc < 2 || validate_input(argv + 1)) {
+		return 0;
 	}
+	
+	PmergeMe<std::vector<int>, pairvect>	vectorMerge(argc - 1, argv + 1);
+	vectorMerge.sort();
+	PmergeMe<std::deque<int>, pairdeque>	dequeMerge(argc - 1, argv + 1);
+	dequeMerge.sort();
+	
+	vectorMerge.printOriginal();
+	vectorMerge.printSorted();
+	
+	std::cout << "Time to process a range of " << argc - 1 << " elements with std::vector : ";
+	vectorMerge.timeDiff();
+	std::cout << "Time to process a range of " << argc - 1 << " elements with std::deque : ";
+	dequeMerge.timeDiff();
 	
 	return 0;
 }
